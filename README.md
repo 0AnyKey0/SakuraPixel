@@ -5,15 +5,15 @@
 
 # It looks like we are starting to get detected. Use public forks at your own Risk! 
 
-## What is Fuzion?
+## What is SakuraPixel?
 
-SkinChanger for *CounterStrike : Global Offensive* on written in C++.
+SkinChanger for *CounterStrike : Global Offensive* on Linux written in C++.
 
 ## Compiling
 
 **Note:** _Do NOT download or compile as the root user._
 
-#### Download the dependencies required to build Fuzion:
+#### Download the dependencies required to build SakuraPixel:
 
 If you are having problems compiling make sure you've got the latest version of `g++`.
 
@@ -36,7 +36,7 @@ sudo dnf install cmake gcc-c++ gdb git libstdc++-static mesa-libGL-devel SDL2-de
 
 ===================
 
-#### Download Fuzion:
+#### Download SakuraPixel:
 
 ```bash
 git clone --recursive https://github.com/0AnyKey0/SakuraPixel
