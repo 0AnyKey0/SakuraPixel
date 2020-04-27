@@ -22,23 +22,14 @@ void SetupMainMenuBar()
 	if (ImGui::BeginMainMenuBar())
 	{
 		ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2(8 * 2.0f, 4 * 2.0f));
-/*
-		ImGui::Selectable(XORSTR("Main Window"), &Main::showWindow, 0, ImVec2(ImGui::CalcTextSize(XORSTR("Main Window"), nullptr, true).x, 0.0f));
-		ImGui::SameLine();
-*/
+
 		ImGui::Selectable(XORSTR("Skin & Model Changer Window"), &SkinModelChanger::showWindow, 0, ImVec2(ImGui::CalcTextSize(XORSTR("Skin & Model Changer Window"), nullptr, true).x, 0.0f));
 		ImGui::SameLine();
 
 		ImGui::Selectable(XORSTR("Config Window"), &Configs::showWindow, 0, ImVec2(ImGui::CalcTextSize(XORSTR("Config Window"), nullptr, true).x, 0.0f));
 		ImGui::SameLine();
 
-		ImGui::Selectable(XORSTR("Spectators Window"), &Settings::ShowSpectators::enabled, 0, ImVec2(ImGui::CalcTextSize(XORSTR("Spectators Window"), nullptr, true).x, 0.0f));
-		ImGui::SameLine();
-
 		ImGui::Selectable(XORSTR("Colors Window"), &Colors::showWindow, 0, ImVec2(ImGui::CalcTextSize(XORSTR("Colors Window"), nullptr, true).x, 0.0f));
-		ImGui::SameLine();
-
-		ImGui::Selectable(XORSTR("Player List Window"), &PlayerList::showWindow, 0, ImVec2(ImGui::CalcTextSize(XORSTR("Player List Window"), nullptr, true).x, 0.0f));
 		ImGui::SameLine();
 
 		ImGui::PopStyleVar();
@@ -74,7 +65,7 @@ void UI::SetupWindows()
 			Main::RenderWindow();
 		ImGui::PopStyleVar();
 
-		ImGui::PushStyleVar(ImGuiStyleVar_WindowMinSize, ImVec2(1050, 645));
+		ImGui::PushStyleVar(ImGuiStyleVar_WindowMinSize, ImVec2(960, 645));
 			SkinModelChanger::RenderWindow();
 		ImGui::PopStyleVar();
 

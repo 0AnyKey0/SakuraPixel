@@ -34,7 +34,7 @@ void Main::RenderWindow()
 
 	static int page = 0;
 
-	if (ImGui::Begin(XORSTR("PaintFreedom"), &Main::showWindow, ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_ShowBorders))
+	if (ImGui::Begin(XORSTR("SakuraPixel"), &Main::showWindow, ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_ShowBorders))
 	{
 		Settings::UI::Windows::Main::open = true;
 		ImVec2 temp = ImGui::GetWindowSize();
@@ -70,27 +70,7 @@ void Main::RenderWindow()
 			if (i < IM_ARRAYSIZE(tabs) - 1)
 				ImGui::SameLine();
 		}
-/*
-		ImGui::Separator();
 
-		switch (page)
-		{
-			case 0:
-				Aimbot::RenderTab();
-				break;
-			case 1:
-				Triggerbot::RenderTab();
-				break;
-			case 2:
-				Visuals::RenderTab();
-				break;
-			case 3:
-				HvH::RenderTab();
-				break;
-			case 4:
-				Misc::RenderTab();
-				break;
-		}         */
 		ImGui::End();
 	}
 }
