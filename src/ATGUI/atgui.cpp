@@ -22,10 +22,10 @@ void SetupMainMenuBar()
 	if (ImGui::BeginMainMenuBar())
 	{
 		ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2(8 * 2.0f, 4 * 2.0f));
-
+/*
 		ImGui::Selectable(XORSTR("Main Window"), &Main::showWindow, 0, ImVec2(ImGui::CalcTextSize(XORSTR("Main Window"), nullptr, true).x, 0.0f));
 		ImGui::SameLine();
-
+*/
 		ImGui::Selectable(XORSTR("Skin & Model Changer Window"), &SkinModelChanger::showWindow, 0, ImVec2(ImGui::CalcTextSize(XORSTR("Skin & Model Changer Window"), nullptr, true).x, 0.0f));
 		ImGui::SameLine();
 
@@ -54,7 +54,7 @@ void UI::SwapWindow()
 	if (engine->IsInGame())
 		return;
 
-    Draw::ImText( ImVec2( 4.f, 4.f ), ImColor( 255, 255, 255, 255 ), XORSTR( "PaintFreedom" ), nullptr, 0.0f, nullptr,
+    Draw::ImText( ImVec2( 4.f, 4.f ), ImColor( 255, 255, 255, 255 ), XORSTR( "SakuraPixel" ), nullptr, 0.0f, nullptr,
                   ImFontFlags_Shadow );
 }
 
