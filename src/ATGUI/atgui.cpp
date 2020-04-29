@@ -7,12 +7,7 @@
 
 #include "Windows/colors.h"
 #include "Windows/configs.h"
-#include "Windows/main.h"
-#include "Windows/playerlist.h"
 #include "Windows/skinmodelchanger.h"
-#include "../Hacks/radar.h"
-#include "../Hacks/showspectators.h"
-
 bool UI::isVisible = false;
 
 #define IM_ARRAYSIZE(_ARR)  ((int)(sizeof(_ARR)/sizeof(*_ARR)))
@@ -62,19 +57,12 @@ void UI::SetupWindows()
 		SetupMainMenuBar();
 
 		ImGui::PushStyleVar(ImGuiStyleVar_WindowMinSize, ImVec2(960, 645));
-			Main::RenderWindow();
-		ImGui::PopStyleVar();
-
-		ImGui::PushStyleVar(ImGuiStyleVar_WindowMinSize, ImVec2(960, 645));
 			SkinModelChanger::RenderWindow();
 		ImGui::PopStyleVar();
 
 		Configs::RenderWindow();
 		Colors::RenderWindow();
-		PlayerList::RenderWindow();
 
-		ShowSpectators::RenderWindow();
 	}
 
-		Radar::RenderWindow();
 }

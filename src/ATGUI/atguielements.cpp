@@ -29,7 +29,7 @@ bool UI::ColorPicker(float* col, bool alphabar)
 	const ImVec2 SV_PICKER_SIZE = ImVec2(EDGE_SIZE, EDGE_SIZE);
 	const float SPACING = ImGui::GetStyle().ItemInnerSpacing.x;
 	const float HUE_PICKER_WIDTH = 20.f;
-	const float CROSSHAIR_SIZE = 7.0f;
+	const float CROSSHAIR_SIZE = 6.0f;
 
 	ImColor color(col[0], col[1], col[2]);
 	bool value_changed = false;

@@ -3,12 +3,13 @@
 #include "../../settings.h"
 #include "../../ImGUI/imgui_internal.h"
 #include "../../Utils/xorstring.h"
-
+/*
 #include "../Tabs/aimbottab.h"
 #include "../Tabs/hvhtab.h"
 #include "../Tabs/misctab.h"
 #include "../Tabs/triggerbottab.h"
 #include "../Tabs/visualstab.h"
+*/
 
 bool Main::showWindow = false;
 
