@@ -1162,10 +1162,6 @@ namespace Settings
  			inline bool allies = false;
  		}
  	}
-	namespace AngleIndicator
-	{
-		inline bool enabled = false;
-	}
     namespace Debug
     {
         namespace AutoWall

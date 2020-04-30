@@ -12,7 +12,6 @@
 #include "../Hacks/hitmarkers.h"
 #include "../Hacks/eventlog.h"
 #include "../Hacks/snipercrosshair.h"
-#include "../Hacks/angleindicator.h"
 
 #include <mutex>
 
@@ -47,7 +46,6 @@ void Hooks::Paint(void* thisptr, PaintMode_t mode)
         GrenadeHelper::Paint();
         Hitmarkers::Paint();
         Eventlog::Paint();
-        AngleIndicator::Paint();
         GrenadePrediction::Paint();
 
         if( Settings::ESP::backend == DrawingBackend::SURFACE ){
