@@ -377,7 +377,6 @@ void Misc::RenderTab()
 			{
 				ImGui::Checkbox(XORSTR("Auto Accept"), &Settings::AutoAccept::enabled);
 				ImGui::Checkbox(XORSTR("Autoblock"), &Settings::Autoblock::enabled);
-				ImGui::Checkbox(XORSTR("Jump Throw"), &Settings::JumpThrow::enabled);
 				ImGui::Checkbox(XORSTR("Auto Defuse"), &Settings::AutoDefuse::enabled);
 				ImGui::Checkbox(XORSTR("Disable post-processing"), &Settings::DisablePostProcessing::enabled);
 			}
@@ -387,7 +386,6 @@ void Misc::RenderTab()
 				ImGui::PopItemWidth();
 				ImGui::Checkbox(XORSTR("Screenshot Cleaner"), &Settings::ScreenshotCleaner::enabled);
 				UI::KeyBindButton(&Settings::Autoblock::key);
-				UI::KeyBindButton(&Settings::JumpThrow::key);
 				ImGui::Checkbox(XORSTR("Silent Defuse"), &Settings::AutoDefuse::silent);
 			}
 			ImGui::Columns(1);

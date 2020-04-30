@@ -6,7 +6,6 @@
 #include "../Hacks/bhop.h"
 #include "../Hacks/autostrafe.h"
 #include "../Hacks/autodefuse.h"
-#include "../Hacks/jumpthrow.h"
 #include "../Hacks/grenadehelper.h"
 #include "../Hacks/grenadeprediction.h"
 #include "../Hacks/edgejump.h"
@@ -40,7 +39,6 @@ bool Hooks::CreateMove(void* thisptr, float flInputSampleTime, CUserCmd* cmd)
 		BHop::CreateMove(cmd);
 		AutoStrafe::CreateMove(cmd);
 		AutoDefuse::CreateMove(cmd);
-		JumpThrow::CreateMove(cmd);
 		GrenadeHelper::CreateMove(cmd);
         GrenadePrediction::CreateMove( cmd );
         EdgeJump::PrePredictionCreateMove(cmd);

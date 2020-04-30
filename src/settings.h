@@ -1092,12 +1092,6 @@ namespace Settings
         inline ShowedAngle type = ShowedAngle::REAL;
 	}
 
-	namespace JumpThrow
-	{
-		inline bool enabled = false;
-		inline ButtonCode_t key = ButtonCode_t::KEY_T;
-	}
-
 	namespace DisablePostProcessing
 	{
 		inline bool enabled = false;
