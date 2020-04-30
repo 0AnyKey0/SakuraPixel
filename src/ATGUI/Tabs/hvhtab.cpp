@@ -3,7 +3,6 @@
 #include "../../interfaces.h"
 #include "../../Utils/xorstring.h"
 #include "../../settings.h"
-#include "../../Hacks/valvedscheck.h"
 #include "../../ImGUI/imgui_internal.h"
 
 #pragma GCC diagnostic ignored "-Wformat-security"
@@ -52,19 +51,7 @@ void HvH::RenderTab()
                     ImGui::ItemSize(ImVec2(0.0f, 0.0f), 0.0f);
                     ImGui::Text(XORSTR("Pitch Actual"));
                 }
-                ImGui::NextColumn();
-                {
-                    ImGui::PushItemWidth(-1);
-                    if (ImGui::Combo(XORSTR("##XTYPE"), (int*)& Settings::AntiAim::Pitch::type, xTypes, IM_ARRAYSIZE(xTypes)))
-                    {
-                        if (!ValveDSCheck::forceUT && ((*csGameRules) && (*csGameRules)->IsValveDS()) && Settings::AntiAim::Pitch::type >= AntiAimType_X::STATIC_UP_FAKE)
-                        {
-                            Settings::AntiAim::Pitch::type = AntiAimType_X::STATIC_UP;
-                            ImGui::OpenPopup(XORSTR("Error###UNTRUSTED_AA"));
-                        }
-                    }
-                    ImGui::PopItemWidth();
-                }
+
                 ImGui::Columns(1);
                 ImGui::Separator();
                 ImGui::Text(XORSTR("Disable"));
@@ -86,19 +73,7 @@ void HvH::RenderTab()
                     ImGui::SliderFloat(XORSTR("##EDGEDISTANCE"), &Settings::AntiAim::HeadEdge::distance, 20, 30, "Distance: %0.f");
                     ImGui::PopItemWidth();
                 }
-                ImGui::Columns(1);
-                ImGui::PushStyleVar(ImGuiStyleVar_WindowMinSize, ImVec2(210, 85));
-                if (ImGui::BeginPopupModal(XORSTR("Error###UNTRUSTED_AA")))
-                {
-                    ImGui::Text(XORSTR("You cannot use this antiaim type on a VALVE server."));
 
-                    ImGui::Checkbox(XORSTR("This is not a VALVE server"), &ValveDSCheck::forceUT);
-
-                    if (ImGui::Button(XORSTR("OK")))
-                        ImGui::CloseCurrentPopup();
-
-                    ImGui::EndPopup();
-                }
                 ImGui::PopStyleVar();
 
                 ImGui::EndChild();

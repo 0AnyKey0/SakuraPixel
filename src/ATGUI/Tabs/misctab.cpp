@@ -14,7 +14,6 @@
 
 #include "../../Hacks/grenadehelper.h"
 #include "../../Hacks/clantagchanger.h"
-#include "../../Hacks/valvedscheck.h"
 
 #pragma GCC diagnostic ignored "-Wformat-security"
 
@@ -396,18 +395,6 @@ void Misc::RenderTab()
 			ImGui::Columns(1);
 			ImGui::Separator();
 
-			ImGui::PushStyleVar(ImGuiStyleVar_WindowMinSize, ImVec2(210, 85));
-			if (ImGui::BeginPopupModal(XORSTR("Error###UNTRUSTED_FEATURE")))
-			{
-				ImGui::Text(XORSTR("You cannot use this feature on a VALVE server."));
-
-				ImGui::Checkbox(XORSTR("This is not a VALVE server"), &ValveDSCheck::forceUT);
-
-				if (ImGui::Button(XORSTR("OK")))
-					ImGui::CloseCurrentPopup();
-
-				ImGui::EndPopup();
-			}
 			ImGui::PopStyleVar();
 
 			ImGui::EndChild();

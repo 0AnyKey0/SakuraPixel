@@ -6,7 +6,6 @@
 #include "Hacks/resolver.h"
 #include "Hacks/skinchanger.h"
 #include "Hacks/spammer.h"
-#include "Hacks/valvedscheck.h"
 #include "interfaces.h"
 #include "SDK/IGameEvent.h"
 
@@ -28,7 +27,6 @@ void EventListener::FireGameEvent(IGameEvent* event)
     Eventlog::FireGameEvent(event);
     Resolver::FireGameEvent(event);
     Spammer::FireGameEvent(event);
-    ValveDSCheck::FireGameEvent(event);
     SkinChanger::FireGameEvent(event);
 }
 

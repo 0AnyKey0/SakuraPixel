@@ -6,7 +6,6 @@
 #include "../Utils/math.h"
 #include "../Utils/entity.h"
 #include "../interfaces.h"
-#include "valvedscheck.h"
 
 QAngle AntiAim::realAngle;
 QAngle AntiAim::fakeAngle;
@@ -264,12 +263,6 @@ void AntiAim::CreateMove(CUserCmd* cmd)
         CreateMove::sendPacket = bSend;
         if (Settings::AntiAim::HeadEdge::enabled && edging_head && !bSend)
             angle.y = edge_angle.y;
-    }
-
-    if (!ValveDSCheck::forceUT && (*csGameRules) && (*csGameRules)->IsValveDS())
-    {
-        if (Settings::AntiAim::Pitch::type >= AntiAimType_X::STATIC_UP_FAKE)
-            Settings::AntiAim::Pitch::type = AntiAimType_X::STATIC_UP;
     }
 
     if (Settings::AntiAim::Pitch::enabled)
