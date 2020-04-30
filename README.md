@@ -91,7 +91,7 @@ Now, go back into CS:GO, if you are in the main menu of the game you should see 
 
 Now that SakuraPixel has been injected into the game, press <kbd>Insert</kbd> on your keyboard to open the hack menu (<kbd>ALT</kbd>+<kbd>I</kbd> if you are using a laptop).
 
-If you want to change skins, create and load configs or open the player list, you can find those buttons at the top of the screen.
+If you want to change skins or create and load configs, you can find those buttons at the top of the screen.
 
 
 ## Unloading the hack
@@ -100,6 +100,9 @@ If you wish to unload the hack from the game, you can do so by entering the comm
 ```bash
 ./uload
 ```
+
+## Screenshots
+<img src="./src/Resources/interface.png">
 
 ## Configs
 
