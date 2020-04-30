@@ -1024,11 +1024,6 @@ namespace Settings
         };
 	}
 
-	namespace ShowRanks
-	{
-		inline bool enabled = false;
-	}
-
 	namespace ShowSpectators
 	{
 		inline bool enabled = false;

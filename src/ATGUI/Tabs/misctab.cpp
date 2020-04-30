@@ -385,7 +385,6 @@ void Misc::RenderTab()
 			{
 				ImGui::PushItemWidth(-1);
 				ImGui::PopItemWidth();
-				ImGui::Checkbox(XORSTR("Show Ranks"), &Settings::ShowRanks::enabled);
 				ImGui::Checkbox(XORSTR("Screenshot Cleaner"), &Settings::ScreenshotCleaner::enabled);
 				UI::KeyBindButton(&Settings::Autoblock::key);
 				UI::KeyBindButton(&Settings::JumpThrow::key);

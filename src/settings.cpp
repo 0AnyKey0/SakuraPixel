@@ -495,8 +495,6 @@ void Settings::LoadDefaultsOrSave(std::string path)
 		#undef skinSetting
 	}
 
-	settings[XORSTR("ShowRanks")][XORSTR("enabled")] = Settings::ShowRanks::enabled;
-
 	settings[XORSTR("ShowSpectators")][XORSTR("enabled")] = Settings::ShowSpectators::enabled;
 
 	settings[XORSTR("UI")][XORSTR("Windows")][XORSTR("Colors")][XORSTR("posX")] = Settings::UI::Windows::Colors::posX;
@@ -1033,8 +1031,6 @@ void Settings::LoadConfig(std::string path)
 	GetVal(settings[XORSTR("SkinChanger")][XORSTR("Skins")][XORSTR("enabled")], &Settings::Skinchanger::Skins::enabled);
 	GetVal(settings[XORSTR("SkinChanger")][XORSTR("Models")][XORSTR("enabled")], &Settings::Skinchanger::Models::enabled);
 	GetVal(settings[XORSTR("SkinChanger")][XORSTR("Skins")][XORSTR("perTeam")], &Settings::Skinchanger::Skins::perTeam);
-
-	GetVal(settings[XORSTR("ShowRanks")][XORSTR("enabled")], &Settings::ShowRanks::enabled);
 
 	GetVal(settings[XORSTR("UI")][XORSTR("Windows")][XORSTR("Colors")][XORSTR("posX")], &Settings::UI::Windows::Colors::posX);
 	GetVal(settings[XORSTR("UI")][XORSTR("Windows")][XORSTR("Colors")][XORSTR("posY")], &Settings::UI::Windows::Colors::posY);

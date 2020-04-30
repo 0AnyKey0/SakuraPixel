@@ -5,7 +5,6 @@
 
 #include "../Hacks/bhop.h"
 #include "../Hacks/autostrafe.h"
-#include "../Hacks/showranks.h"
 #include "../Hacks/autodefuse.h"
 #include "../Hacks/jumpthrow.h"
 #include "../Hacks/grenadehelper.h"
@@ -40,7 +39,6 @@ bool Hooks::CreateMove(void* thisptr, float flInputSampleTime, CUserCmd* cmd)
 		/* run code that affects movement before prediction */
 		BHop::CreateMove(cmd);
 		AutoStrafe::CreateMove(cmd);
-		ShowRanks::CreateMove(cmd);
 		AutoDefuse::CreateMove(cmd);
 		JumpThrow::CreateMove(cmd);
 		GrenadeHelper::CreateMove(cmd);
