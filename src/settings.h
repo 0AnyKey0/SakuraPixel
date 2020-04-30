@@ -1067,12 +1067,6 @@ namespace Settings
 		inline ColorVar color = ImColor(0, 0, 0, 255);
 	}
 
-	namespace SkyBox
-	{
-		inline bool enabled = false;
-		inline int skyBoxNumber = 0; // number in skyBoxNames
-	}
-
 	namespace ASUSWalls
 	{
 		inline bool enabled = false;

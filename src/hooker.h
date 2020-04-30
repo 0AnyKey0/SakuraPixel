@@ -35,7 +35,6 @@ namespace Hooker
 	void HookSwapWindow();
 	void HookPollEvent();
 	void FindSDLInput();
-	void FindSetNamedSkybox();
 	void FindPanelArrayOffset();
 	void FindPlayerAnimStateOffset();
     void FindPlayerAnimOverlayOffset();

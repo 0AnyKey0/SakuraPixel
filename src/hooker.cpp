@@ -64,8 +64,6 @@ uintptr_t SetAbsOriginFnAddr;
 //RandomIntFn RandomInt;
 //RandomGaussianFloatFn RandomGaussianFloat;
 
-SetNamedSkyBoxFn SetNamedSkyBox;
-
 std::vector<dlinfo_t> libraries;
 
 // taken form aixxe's cstrike-basehook-linux
@@ -393,19 +391,6 @@ void Hooker::FindSDLInput()
 																XORSTR("xxx????x????x"));
 	ILauncherMgrCreateFn createFunc = reinterpret_cast<ILauncherMgrCreateFn>(GetAbsoluteAddress(startAddr + 12, 1, 5));
 	launcherMgr = createFunc();
-}
-
-void Hooker::FindSetNamedSkybox()
-{
-	//55 4C 8D 05 ?? ?? ?? ?? 48 89 E5 41
-    // xref for "skybox/%s%s"
-    uintptr_t func_address = PatternFinder::FindPatternInModule(XORSTR("engine_client.so"),
-                                                                (unsigned char*) XORSTR("\x55\x4C\x8D\x05"
-                                                                                                "\x00\x00\x00\x00" //??
-                                                                                                "\x48\x89\xE5\x41"),
-                                                                XORSTR("xxxx????xxxx"));
-
-    SetNamedSkyBox = reinterpret_cast<SetNamedSkyBoxFn>(func_address);
 }
 
 void Hooker::FindPanelArrayOffset()

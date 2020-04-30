@@ -34,7 +34,6 @@ void MainThread()
 
     cvar->ConsoleDPrintf(XORSTR("Loading...\n"));
 
-	Hooker::FindSetNamedSkybox();
 	Hooker::FindViewRender();
 	Hooker::FindSDLInput();
 	Hooker::FindIClientMode();
@@ -153,9 +152,6 @@ int __attribute__((constructor)) Startup()
 /* Called when un-injecting the library */
 void __attribute__((destructor)) Shutdown()
 {
-    if( Settings::SkyBox::enabled ){
-        SetNamedSkyBox( cvar->FindVar("sv_skyname")->strValue );
-    }
     cvar->FindVar(XORSTR("cl_mouseenable"))->SetValue(1);
 
 	SDL2::UnhookWindow();

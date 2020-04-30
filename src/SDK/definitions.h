@@ -39,7 +39,6 @@ typedef ICommandLine* (*CommandLineFn) (void);
 //typedef float (*RandomFloatExpFn)(float, float, float);
 //typedef int (*RandomIntFn)(int, int);
 //typedef float (*RandomGaussianFloatFn)(float, float);
-typedef bool (*SetNamedSkyBoxFn)(const char*);
 
 extern Vector lastRayStart;
 extern Vector lastRayEnd;
@@ -1859,7 +1858,6 @@ const std::map<ItemDefinitionIndex, DefItem_t> ItemDefinitionIndexMap = {
 #define TEXTURE_GROUP_VGUI							"VGUI textures"
 #define TEXTURE_GROUP_PARTICLE						"Particle textures"
 #define TEXTURE_GROUP_DECAL							"Decal textures"
-#define TEXTURE_GROUP_SKYBOX						"SkyBox textures"
 #define TEXTURE_GROUP_CLIENT_EFFECTS				"ClientEffect textures"
 #define TEXTURE_GROUP_OTHER							"Other textures"
 #define TEXTURE_GROUP_PRECACHED						"Precached"				// TODO: assign texture groups to the precached materials
@@ -1887,8 +1885,6 @@ const std::map<ItemDefinitionIndex, DefItem_t> ItemDefinitionIndexMap = {
 
 // NOTE: These are stored in a short in the engine now.  Don't use more than 16 bits
 #define SURF_LIGHT		0x0001		// value will hold the light strength
-#define SURF_SKY2D		0x0002		// don't draw, indicates we should skylight + draw 2d sky but not draw the 3D skybox
-#define SURF_SKY		0x0004		// don't draw, but add to skybox
 #define SURF_WARP		0x0008		// turbulent water warp
 #define SURF_TRANS		0x0010
 #define SURF_NOPORTAL	0x0020	// the surface can not have a portal placed on it

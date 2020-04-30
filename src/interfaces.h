@@ -65,8 +65,6 @@ extern GetLocalClientFn GetLocalClient;
 //extern RandomIntFn RandomInt;
 //extern RandomGaussianFloatFn RandomGaussianFloat;
 
-extern SetNamedSkyBoxFn SetNamedSkyBox;
-
 extern int* nPredictionRandomSeed;
 extern CMoveData* g_MoveData;
 extern bool* s_bOverridePostProcessingDisable;

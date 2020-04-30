@@ -549,9 +549,6 @@ void Settings::LoadDefaultsOrSave(std::string path)
 	settings[XORSTR("NoSky")][XORSTR("enabled")] = Settings::NoSky::enabled;
 	LoadColor(settings[XORSTR("NoSky")][XORSTR("color")], Settings::NoSky::color);
 
-	settings[XORSTR("SkyBox")][XORSTR("enabled")] = Settings::SkyBox::enabled;
-	settings[XORSTR("SkyBox")][XORSTR("skyBoxNumber")] = Settings::SkyBox::skyBoxNumber;
-
 	settings[XORSTR("ASUSWalls")][XORSTR("enabled")] = Settings::ASUSWalls::enabled;
 	LoadColor(settings[XORSTR("ASUSWalls")][XORSTR("color")], Settings::ASUSWalls::color);
 
@@ -1105,9 +1102,6 @@ void Settings::LoadConfig(std::string path)
 
 	GetVal(settings[XORSTR("NoSky")][XORSTR("enabled")], &Settings::NoSky::enabled);
 	GetVal(settings[XORSTR("NoSky")][XORSTR("color")], &Settings::NoSky::color);
-
-	GetVal(settings[XORSTR("SkyBox")][XORSTR("enabled")], &Settings::SkyBox::enabled);
-	GetVal(settings[XORSTR("SkyBox")][XORSTR("skyBoxNumber")], &Settings::SkyBox::skyBoxNumber);
 
 	GetVal(settings[XORSTR("ASUSWalls")][XORSTR("enabled")], &Settings::ASUSWalls::enabled);
 	GetVal(settings[XORSTR("ASUSWalls")][XORSTR("color")], &Settings::ASUSWalls::color);

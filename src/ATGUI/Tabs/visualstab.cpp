@@ -23,31 +23,6 @@ void Visuals::RenderTab()
 	const char* WeaponTypes[] = { "Default", "Wireframe", "None" };
 	const char* SmokeTypes[] = { "Wireframe", "None" };
     const char* Sounds[] = { "None", "SpongeBob", "Half life", "Half life 2", "Half life 3", "Half life 4", "BB Gun Bell", "Dopamine", "Wub", "Pedo Yes!", "Meme", "Error", "Orchestral" };
-	const char* SkyBoxes[] = {
-			"cs_baggage_skybox_", // 0
-			"cs_tibet",
-			"embassy",
-			"italy",
-			"jungle",
-			"office",
-			"nukeblank",
-			"sky_venice",
-			"sky_cs15_daylight01_hdr",
-			"sky_cs15_daylight02_hdr",
-			"sky_cs15_daylight03_hdr",
-			"sky_cs15_daylight04_hdr",
-			"sky_csgo_cloudy01",
-			"sky_csgo_night_flat",
-			"sky_csgo_night02",
-			"sky_csgo_night02b",
-			"sky_day02_05",
-			"sky_day02_05_hdr",
-			"sky_dust",
-			"vertigo",
-			"vertigo_hdr",
-			"vertigoblue_hdr",
-			"vietnam" // 21
-	};
 	const char *tracerEffectNames[] = {
 			"Assault Rifle", // 0
 			"Pistol",
@@ -251,14 +226,6 @@ void Visuals::RenderTab()
 				ImGui::Checkbox(XORSTR("Filled"), &Settings::ESP::FOVCrosshair::filled);
 				ImGui::Checkbox(XORSTR("Show SpreadLimit"), &Settings::ESP::Spread::spreadLimit);
 			}
-			ImGui::Columns(1);
-			ImGui::Separator();
-			ImGui::Text(XORSTR("Skybox Changer"));
-			ImGui::Separator();
-			ImGui::Checkbox(XORSTR("##SKYBOXENABLE"), &Settings::SkyBox::enabled);
-			ImGui::SameLine();
-			ImGui::Combo(XORSTR("##SKYBOX"), &Settings::SkyBox::skyBoxNumber, SkyBoxes, IM_ARRAYSIZE(SkyBoxes));
-			ImGui::Separator();
 			ImGui::Text(XORSTR("Other Visual Settings"));
 			ImGui::Separator();
 			ImGui::Columns(2, nullptr, true);

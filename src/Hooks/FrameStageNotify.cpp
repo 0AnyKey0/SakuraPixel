@@ -6,7 +6,6 @@
 #include "../Hacks/skinchanger.h"
 #include "../Hacks/view.h"
 #include "../Hacks/resolver.h"
-#include "../Hacks/skybox.h"
 #include "../Hacks/asuswalls.h"
 #include "../Hacks/nosmoke.h"
 #include "../Hacks/thirdperson.h"
@@ -20,7 +19,6 @@ void Hooks::FrameStageNotify(void* thisptr, ClientFrameStage_t stage)
 	SkinChanger::FrameStageNotifySkins(stage);
 	View::FrameStageNotify(stage);
 	Resolver::FrameStageNotify(stage);
-	SkyBox::FrameStageNotify(stage);
 	ASUSWalls::FrameStageNotify(stage);
 	NoSmoke::FrameStageNotify(stage);
 	ThirdPerson::FrameStageNotify(stage);
