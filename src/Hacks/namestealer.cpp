@@ -1,6 +1,5 @@
 #include "namestealer.h"
 
-#include "namechanger.h"
 #include "../Utils/util.h"
 #include "../Utils/xorstring.h"
 #include "../settings.h"
@@ -33,15 +32,6 @@ void NameStealer::BeginFrame(float frameTime)
 		if (entityId >= engine->GetMaxClients())
 			entityId = 1;
 
-		if (entityId == 0)
-		{
-			NameChanger::SetName(XORSTR("\n\xAD\xAD\xAD"));
-
-			timeStamp = currentTime_ms;
-
-			break;
-		}
-
 		if ((*csPlayerResource) && (*csPlayerResource)->GetConnected(entityId))
 		{
 			// TODO: Replace with IsTeamMate().
@@ -56,8 +46,6 @@ void NameStealer::BeginFrame(float frameTime)
 
 			if (entityInformation.ishltv)
 				break;
-
-			NameChanger::SetName(Util::PadStringRight(entityInformation.name, strlen(entityInformation.name) + 1));
 
 			timeStamp = currentTime_ms;
 		}

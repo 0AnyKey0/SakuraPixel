@@ -12,7 +12,6 @@
 #include "../../ImGUI/imgui_internal.h"
 #include "../atgui.h"
 
-#include "../../Hacks/namechanger.h"
 #include "../../Hacks/namestealer.h"
 #include "../../Hacks/grenadehelper.h"
 #include "../../Hacks/clantagchanger.h"
@@ -373,44 +372,6 @@ void Misc::RenderTab()
 			}
 			ImGui::Columns(1);
 			ImGui::Separator();
-			ImGui::Text(XORSTR("Nickname"));
-			ImGui::Separator();
-
-			ImGui::InputText(XORSTR("##NICKNAME"), nickname, 127);
-
-			ImGui::SameLine();
-			if (ImGui::Button(XORSTR("Set Nickname"), ImVec2(-1, 0)))
-				NameChanger::SetName(std::string(nickname).c_str());
-
-			if (ImGui::Button(XORSTR("Glitch Name")))
-				NameChanger::SetName("\n\xAD\xAD\xAD");
-			ImGui::SameLine();
-			if (ImGui::Button(XORSTR("No Name")))
-			{
-				NameChanger::changes = 0;
-				NameChanger::type = NameChanger::NC_Type::NC_NORMAL;
-			}
-
-			ImGui::SameLine();
-			if (ImGui::Button(XORSTR("Rainbow Name")))
-				NameChanger::InitColorChange(NameChanger::NC_Type::NC_RAINBOW);
-
-			ImGui::SameLine();
-			if (ImGui::Button(XORSTR("Colorize Name"), ImVec2(-1, 0)))
-				ImGui::OpenPopup(XORSTR("optionColorizeName"));
-			ImGui::SetNextWindowSize(ImVec2(150, 300), ImGuiSetCond_Always);
-			if (ImGui::BeginPopup(XORSTR("optionColorizeName")))
-			{
-				ImGui::PushItemWidth(-1);
-				for (auto& it : NameChanger::colors)
-				{
-					if (ImGui::Button(it.second, ImVec2(-1, 0)))
-						NameChanger::InitColorChange(NameChanger::NC_Type::NC_SOLID, it.first);
-				}
-				ImGui::PopItemWidth();
-
-				ImGui::EndPopup();
-			}
 			ImGui::Columns(2, nullptr, true);
 			{
 				if (ImGui::Checkbox(XORSTR("Name Stealer"), &Settings::NameStealer::enabled))

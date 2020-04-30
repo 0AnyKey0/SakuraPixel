@@ -9,7 +9,6 @@
 #include "../../Hacks/esp.h"
 #include "../../Hacks/resolver.h"
 #include "../../Hacks/clantagchanger.h"
-#include "../../Hacks/namechanger.h"
 
 #pragma GCC diagnostic ignored "-Wformat-security"
 
@@ -188,15 +187,6 @@ void PlayerList::RenderWindow()
 			}
 			ImGui::NextColumn();
 			{
-				if (ImGui::Button(XORSTR("Steal name")))
-				{
-					std::string name(entityInformation.name);
-					name = Util::PadStringRight(name, name.length() + 1);
-
-					strcpy(nickname, name.c_str());
-					NameChanger::SetName(Util::PadStringRight(name, name.length() + 1));
-				}
-
 				if (ImGui::Button(XORSTR("Votekick")))
 				{
 					std::string cmd;
