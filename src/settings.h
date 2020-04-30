@@ -1100,12 +1100,6 @@ namespace Settings
 		inline ButtonCode_t key = ButtonCode_t::KEY_C;
 	}
 
-	namespace NameStealer
-	{
-		inline bool enabled = false;
-		inline int team = 1;
-	}
-
 	namespace ThirdPerson
 	{
 		inline bool enabled = false;

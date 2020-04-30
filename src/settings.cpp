@@ -567,9 +567,6 @@ void Settings::LoadDefaultsOrSave(std::string path)
 	settings[XORSTR("EdgeJump")][XORSTR("enabled")] = Settings::EdgeJump::enabled;
 	settings[XORSTR("EdgeJump")][XORSTR("key")] = Util::GetButtonName(Settings::EdgeJump::key);
 
-	settings[XORSTR("NameStealer")][XORSTR("enabled")] = Settings::NameStealer::enabled;
-	settings[XORSTR("NameStealer")][XORSTR("team")] = Settings::NameStealer::team;
-
 	settings[XORSTR("Eventlog")][XORSTR("showEnemies")] = Settings::Eventlog::showEnemies;
 	settings[XORSTR("Eventlog")][XORSTR("showTeammates")] = Settings::Eventlog::showTeammates;
 	settings[XORSTR("Eventlog")][XORSTR("showLocalplayer")] = Settings::Eventlog::showLocalplayer;
@@ -1117,9 +1114,6 @@ void Settings::LoadConfig(std::string path)
 
 	GetVal(settings[XORSTR("EdgeJump")][XORSTR("enabled")], &Settings::EdgeJump::enabled);
 	GetButtonCode(settings[XORSTR("EdgeJump")][XORSTR("key")], &Settings::EdgeJump::key);
-
-	GetVal(settings[XORSTR("NameStealer")][XORSTR("enabled")], &Settings::NameStealer::enabled);
-	GetVal(settings[XORSTR("NameStealer")][XORSTR("team")], &Settings::NameStealer::team);
 
 	GetVal(settings[XORSTR("Eventlog")][XORSTR("showEnemies")], &Settings::Eventlog::showEnemies);
 	GetVal(settings[XORSTR("Eventlog")][XORSTR("showTeammates")], &Settings::Eventlog::showTeammates);

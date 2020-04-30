@@ -12,7 +12,6 @@
 #include "../../ImGUI/imgui_internal.h"
 #include "../atgui.h"
 
-#include "../../Hacks/namestealer.h"
 #include "../../Hacks/grenadehelper.h"
 #include "../../Hacks/clantagchanger.h"
 #include "../../Hacks/valvedscheck.h"
@@ -369,17 +368,6 @@ void Misc::RenderTab()
 				if (ImGui::SliderInt(XORSTR("##ANIMATIONSPEED"), &Settings::ClanTagChanger::animationSpeed, 500, 2000))
 					ClanTagChanger::UpdateClanTagCallback();
 				ImGui::PopItemWidth();
-			}
-			ImGui::Columns(1);
-			ImGui::Separator();
-			ImGui::Columns(2, nullptr, true);
-			{
-				if (ImGui::Checkbox(XORSTR("Name Stealer"), &Settings::NameStealer::enabled))
-					NameStealer::entityId = -1;
-			}
-			ImGui::NextColumn();
-			{
-				ImGui::Combo("", &Settings::NameStealer::team, teams, IM_ARRAYSIZE(teams));
 			}
 
 			ImGui::Columns(1);

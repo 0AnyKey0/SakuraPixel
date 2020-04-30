@@ -4,7 +4,6 @@
 #include "../interfaces.h"
 
 #include "../Hacks/clantagchanger.h"
-#include "../Hacks/namestealer.h"
 #include "../Hacks/spammer.h"
 #include "../Hacks/radar.h"
 #include "../Hacks/disablepostprocessing.h"

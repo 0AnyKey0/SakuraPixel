@@ -3,7 +3,6 @@
 #include "Hacks/aimbot.h"
 #include "Hacks/eventlog.h"
 #include "Hacks/hitmarkers.h"
-#include "Hacks/namestealer.h"
 #include "Hacks/resolver.h"
 #include "Hacks/skinchanger.h"
 #include "Hacks/spammer.h"
@@ -27,7 +26,6 @@ void EventListener::FireGameEvent(IGameEvent* event)
     Aimbot::FireGameEvent(event);
     Hitmarkers::FireGameEvent(event);
     Eventlog::FireGameEvent(event);
-    NameStealer::FireGameEvent(event);
     Resolver::FireGameEvent(event);
     Spammer::FireGameEvent(event);
     ValveDSCheck::FireGameEvent(event);
