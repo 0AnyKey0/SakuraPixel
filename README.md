@@ -1,5 +1,5 @@
 <p align="center">
-<img src="./.pictures/sakuraPixel.jpg">
+<img src="./src/Resources/sakuraPixel.jpg">
 </p>
 ===================
 
@@ -83,7 +83,7 @@ If the injection was successful you will see a message at the bottom saying `Suc
 
 Now, go back into CS:GO, if you are in the main menu of the game you should see a banner in the top left like so:
 
-![this](http://i.imgur.com/Gb0SV1u.png)
+<img src="./src/Resources/load.png">
 
 *Note:* if you are getting crashes ( that are unrelated to game updates ) Try disabling shader precaching in your Steam Client -> Steam -> Settings -> Shader Pre-Caching. 
 

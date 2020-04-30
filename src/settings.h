@@ -947,12 +947,6 @@ namespace Settings
 		}
 	}
 
-	namespace Airstuck
-	{
-		inline bool enabled = false;
-		inline ButtonCode_t key = ButtonCode_t::KEY_F;
-	}
-
 	namespace Autoblock
 	{
 		inline bool enabled = false;
