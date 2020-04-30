@@ -495,8 +495,6 @@ void Settings::LoadDefaultsOrSave(std::string path)
 		#undef skinSetting
 	}
 
-	settings[XORSTR("ShowSpectators")][XORSTR("enabled")] = Settings::ShowSpectators::enabled;
-
 	settings[XORSTR("UI")][XORSTR("Windows")][XORSTR("Colors")][XORSTR("posX")] = Settings::UI::Windows::Colors::posX;
 	settings[XORSTR("UI")][XORSTR("Windows")][XORSTR("Colors")][XORSTR("posY")] = Settings::UI::Windows::Colors::posY;
 	settings[XORSTR("UI")][XORSTR("Windows")][XORSTR("Colors")][XORSTR("sizeX")] = Settings::UI::Windows::Colors::sizeX;
@@ -1073,8 +1071,6 @@ void Settings::LoadConfig(std::string path)
 	Settings::UI::Windows::Playerlist::reload = true;
 	Settings::UI::Windows::Skinmodel::reload = true;
 	Settings::UI::Windows::Spectators::reload = true;
-
-	GetVal(settings[XORSTR("ShowSpectators")][XORSTR("enabled")], &Settings::ShowSpectators::enabled);
 
 	GetVal(settings[XORSTR("ClanTagChanger")][XORSTR("value")], (char *)& Settings::ClanTagChanger::value);
 	GetVal(settings[XORSTR("ClanTagChanger")][XORSTR("enabled")], &Settings::ClanTagChanger::enabled);

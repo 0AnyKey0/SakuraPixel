@@ -1024,11 +1024,6 @@ namespace Settings
         };
 	}
 
-	namespace ShowSpectators
-	{
-		inline bool enabled = false;
-	}
-
 	namespace ClanTagChanger
 	{
 		inline char value[30] = {0};
