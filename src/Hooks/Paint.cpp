@@ -11,7 +11,6 @@
 #include "../Hacks/grenadeprediction.h"
 #include "../Hacks/hitmarkers.h"
 #include "../Hacks/eventlog.h"
-#include "../Hacks/snipercrosshair.h"
 
 #include <mutex>
 

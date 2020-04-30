@@ -1078,11 +1078,6 @@ namespace Settings
 		inline bool enabled = false;
 	}
 
-	namespace SniperCrosshair
-	{
-		inline bool enabled = false;
-	}
-
 	namespace AutoDefuse
 	{
 		inline bool enabled = false;
