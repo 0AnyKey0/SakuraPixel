@@ -367,9 +367,9 @@ namespace Settings
 			}
 			namespace Skinmodel
 			{
-				inline int posX = 1050;
-				inline int posY = 645;
-				inline int sizeX = 1050;
+				inline int posX = 20;
+				inline int posY = 20;
+				inline int sizeX = 960;
 				inline int sizeY = 645;
 				inline bool open = false;
 				inline bool reload = false; // True on config load, used to change Window Position.
@@ -945,12 +945,6 @@ namespace Settings
 		{
 			inline bool enabled = false;
 		}
-	}
-
-	namespace Recoilcrosshair
-	{
-		inline bool enabled = false;
-		inline bool showOnlyWhenShooting = false;
 	}
 
 	namespace Airstuck

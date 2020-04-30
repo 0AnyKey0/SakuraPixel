@@ -9,7 +9,6 @@
 #include "../Hacks/dlights.h"
 #include "../Hacks/grenadehelper.h"
 #include "../Hacks/grenadeprediction.h"
-#include "../Hacks/recoilcrosshair.h"
 #include "../Hacks/hitmarkers.h"
 #include "../Hacks/eventlog.h"
 #include "../Hacks/snipercrosshair.h"
@@ -46,7 +45,6 @@ void Hooks::Paint(void* thisptr, PaintMode_t mode)
         Dlights::Paint();
         ESP::Paint();
         GrenadeHelper::Paint();
-        Recoilcrosshair::Paint();
         Hitmarkers::Paint();
         Eventlog::Paint();
         AngleIndicator::Paint();
