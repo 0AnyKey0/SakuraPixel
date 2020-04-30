@@ -670,14 +670,6 @@ public:
 	int GetZoomLevels() { // Doesn't work correctly on some weapons.
 		return *( int* ) ( ( uintptr_t )this + 0x23C); // DT_WeaponCSBaseGun.m_zoomLevel ?
 	}
-
-	char* GetTracerEffect() {
-		return *( char** ) ( ( uintptr_t )this + 0x280);
-	}
-
-	int* GetTracerFrequency() {
-		return ( int* ) ( ( uintptr_t )this + 0x288);
-	}
 };
 
 class C_BaseCombatWeapon: public C_BaseAttributableItem

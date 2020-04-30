@@ -16,7 +16,6 @@
 #include "../Hacks/autoknife.h"
 #include "../Hacks/antiaim.h"
 #include "../Hacks/esp.h"
-#include "../Hacks/tracereffect.h"
 
 bool CreateMove::sendPacket = true;
 QAngle CreateMove::lastTickViewAngles = QAngle(0, 0, 0);
@@ -50,7 +49,6 @@ bool Hooks::CreateMove(void* thisptr, float flInputSampleTime, CUserCmd* cmd)
 			AutoKnife::CreateMove(cmd);
             AntiAim::CreateMove(cmd);
 			ESP::CreateMove(cmd);
-			TracerEffect::CreateMove(cmd);
 		PredictionSystem::EndPrediction();
 
 		EdgeJump::PostPredictionCreateMove(cmd);

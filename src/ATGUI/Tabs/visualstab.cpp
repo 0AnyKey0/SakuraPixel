@@ -4,7 +4,6 @@
 #include "../../Utils/xorstring.h"
 #include "../../ImGUI/imgui_internal.h"
 #include "../atgui.h"
-#include "../../Hacks/tracereffect.h"
 #include "../../Hacks/materialconfig.h"
 
 #pragma GCC diagnostic ignored "-Wformat-security"
@@ -23,26 +22,6 @@ void Visuals::RenderTab()
 	const char* WeaponTypes[] = { "Default", "Wireframe", "None" };
 	const char* SmokeTypes[] = { "Wireframe", "None" };
     const char* Sounds[] = { "None", "SpongeBob", "Half life", "Half life 2", "Half life 3", "Half life 4", "BB Gun Bell", "Dopamine", "Wub", "Pedo Yes!", "Meme", "Error", "Orchestral" };
-	const char *tracerEffectNames[] = {
-			"Assault Rifle", // 0
-			"Pistol",
-			"SMG",
-			"Rifle",
-			"Kisak Snot",
-			"Machine Gun",
-			"Shotgun",
-			"Kisak Snot Fallback",
-			"Kisak Snot Fallback2",
-			"Wire1A",
-			"Wire2",
-			"Wire1B",
-			"Original",
-			"Backup",
-			".50 Cal",
-			".50 Cal Glow",
-			".50 Cal Low",
-			".50 Cal Low Glow", // 17
-	};
 
 	ImGui::Columns(2, nullptr, true);
 	{
@@ -366,34 +345,6 @@ void Visuals::RenderTab()
 									 &Settings::MaterialConfig::config.m_bSupportFlashlight );
 					ImGui::Checkbox( XORSTR( "Paint Enabled" ), &Settings::MaterialConfig::config.m_bPaintEnabled );
 					// VRMode Adapter?
-					ImGui::PopItemWidth();
-					ImGui::EndPopup();
-				}
-				if(ImGui::Button(XORSTR("Tracer Effect"), ImVec2(-1, 0)))
-					ImGui::OpenPopup(XORSTR("##TracerEffectWindow"));
-				ImGui::SetNextWindowSize(ImVec2(320,120), ImGuiSetCond_Always);
-				if( ImGui::BeginPopup(XORSTR("##TracerEffectWindow")) )
-				{
-					ImGui::PushItemWidth(-1);
-                    if( Settings::TracerEffects::serverSide )
-                    {
-                        Settings::TracerEffects::frequency = 1;
-                        Settings::TracerEffects::effect = TracerEffects_t::TASER;
-                    }
-					ImGui::Combo(XORSTR("##TracerEffects"), (int*)& Settings::TracerEffects::effect, tracerEffectNames, IM_ARRAYSIZE(tracerEffectNames));
-					ImGui::Checkbox(XORSTR("Enable Tracers"), &Settings::TracerEffects::enabled);
-                    ImGui::Checkbox(XORSTR("Server Sided?"), &Settings::TracerEffects::serverSide);
-                    SetTooltip(XORSTR("Requires a Taser in your Inventory.\nCan only shoot one shot at a time\nOnly Works with Kisak Snot"));
-                    ImGui::Columns(2, nullptr, false);
-                    {
-                        ImGui::SliderInt(XORSTR("##TracerFreq"),&Settings::TracerEffects::frequency, 0, 10, XORSTR("Freq: %0.f"));
-                    }
-                    ImGui::NextColumn();
-                    {
-                        if( ImGui::Button(XORSTR("Restore Tracers")) ){
-                            TracerEffect::RestoreTracers();
-                        }
-                    }
 					ImGui::PopItemWidth();
 					ImGui::EndPopup();
 				}

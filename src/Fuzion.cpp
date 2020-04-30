@@ -11,7 +11,6 @@
 #include "Utils/xorstring.h"
 #include "Utils/bonemaps.h"
 
-#include "Hacks/tracereffect.h"
 #include "Hacks/skinchanger.h"
 #include "settings.h"
 
@@ -152,8 +151,6 @@ void __attribute__((destructor)) Shutdown()
 
 	SDL2::UnhookWindow();
 	SDL2::UnhookPollEvent();
-
-	TracerEffect::RestoreTracers();
 
     for( VMT* vmt : createdVMTs ){
         delete vmt;

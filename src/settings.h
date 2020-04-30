@@ -1122,14 +1122,6 @@ namespace Settings
 
 	}
 
-	namespace TracerEffects
-	{
-		inline bool enabled = false;
-		inline bool serverSide = false;
-		inline TracerEffects_t effect = TracerEffects_t::TASER;
-		inline int frequency = 1;
-
-	}
 	namespace AutoKnife
  	{
  		inline bool enabled = false;
