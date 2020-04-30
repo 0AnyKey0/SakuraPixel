@@ -230,14 +230,6 @@ void Visuals::RenderTab()
 			ImGui::Separator();
 			ImGui::Columns(2, nullptr, true);
 			{
-				ImGui::Checkbox(XORSTR("Arms"), &Settings::ESP::Chams::Arms::enabled);
-				ImGui::Checkbox(XORSTR("Weapons"), &Settings::ESP::Chams::Weapon::enabled);
-				ImGui::Checkbox(XORSTR("Dlights"), &Settings::Dlights::enabled);
-				ImGui::Checkbox(XORSTR("No Smoke"), &Settings::NoSmoke::enabled);
-				ImGui::Checkbox(XORSTR("Show Footsteps"), &Settings::ESP::Sounds::enabled);
-				ImGui::Checkbox(XORSTR("No View Punch"), &Settings::View::NoViewPunch::enabled);
-				ImGui::Checkbox(XORSTR("No Sky"), &Settings::NoSky::enabled);
-
 				if ( ImGui::Button( XORSTR( "Material Config" ), ImVec2( -1, 0 ) ) )
 					ImGui::OpenPopup( XORSTR( "##MaterialConfigWindow" ) );
 				SetTooltip( XORSTR( "Advanced CSGO Gfx Settings\nExperimental" ) );
@@ -412,7 +404,6 @@ void Visuals::RenderTab()
 				ImGui::Combo(XORSTR("##ARMSTYPE"), (int*)& Settings::ESP::Chams::Arms::type, ArmsTypes, IM_ARRAYSIZE(ArmsTypes));
 				ImGui::Combo(XORSTR("##WEAPONTYPE"), (int*)& Settings::ESP::Chams::Weapon::type, WeaponTypes, IM_ARRAYSIZE(WeaponTypes));
 				ImGui::SliderFloat(XORSTR("##DLIGHTRADIUS"), &Settings::Dlights::radius, 0, 1000, XORSTR("Radius: %0.f"));
-				ImGui::Combo(XORSTR("##SMOKETYPE"), (int*)& Settings::NoSmoke::type, SmokeTypes, IM_ARRAYSIZE(SmokeTypes));
 				ImGui::SliderInt(XORSTR("##SOUNDSTIME"), &Settings::ESP::Sounds::time, 250, 5000, XORSTR("Timeout: %0.f"));
 				ImGui::PopItemWidth();
 				ImGui::Checkbox( XORSTR( "Grenade Prediction" ), &Settings::GrenadePrediction::enabled );

@@ -11,7 +11,6 @@
 #include "Utils/xorstring.h"
 #include "Utils/bonemaps.h"
 
-#include "Hacks/nosmoke.h"
 #include "Hacks/tracereffect.h"
 #include "Hacks/skinchanger.h"
 #include "Hacks/valvedscheck.h"
@@ -117,7 +116,6 @@ void MainThread()
 
     viewRenderVMT = new VMT(viewRender);
     viewRenderVMT->HookVM(Hooks::RenderView, 6 );
-    viewRenderVMT->HookVM(Hooks::RenderSmokePostViewmodel, 42);
     viewRenderVMT->ApplyVMT();
     
 	eventListener = new EventListener({ XORSTR("cs_game_disconnected"), XORSTR("player_connect_full"), XORSTR("player_death"), XORSTR("item_purchase"), XORSTR("item_remove"), XORSTR("item_pickup"), XORSTR("player_hurt"), XORSTR("bomb_begindefuse"), XORSTR("enter_bombzone"), XORSTR("bomb_beginplant"), XORSTR("switch_team") });
@@ -157,7 +155,6 @@ void __attribute__((destructor)) Shutdown()
 	SDL2::UnhookWindow();
 	SDL2::UnhookPollEvent();
 
-	NoSmoke::Cleanup();
 	TracerEffect::RestoreTracers();
 
     for( VMT* vmt : createdVMTs ){

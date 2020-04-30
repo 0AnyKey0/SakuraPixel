@@ -41,7 +41,6 @@ namespace Hooks
 
 	/* ViewRender */
 	void RenderView(void* thisptr, CViewSetup& setup, CViewSetup& hudViewSetup, unsigned int nClearFlags, int whatToDraw);
-	void RenderSmokePostViewmodel(void* thisptr);
 
 
 

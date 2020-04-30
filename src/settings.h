@@ -1089,12 +1089,6 @@ namespace Settings
 		inline bool silent = false;
 	}
 
-	namespace NoSmoke
-	{
-		inline bool enabled = false;
-		inline SmokeType type = SmokeType::NONE;
-	}
-
 	namespace ScreenshotCleaner
 	{
 		inline bool enabled = false;
