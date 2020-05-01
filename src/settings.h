@@ -50,14 +50,6 @@ enum class AutostrafeType : int
 	AS_RAGE,
 };
 
-enum class ChamsType : int
-{
-	CHAMS,
-	CHAMS_XQZ,
-	CHAMS_FLAT,
-	CHAMS_FLAT_XQZ,
-};
-
 enum class BoxType : int
 {
 	FLAT_2D,
@@ -725,31 +717,6 @@ namespace Settings
 			inline bool enabled = false;
 			inline bool filled = false;
 			inline ColorVar color = ImColor(255, 0, 0, 255);
-		}
-
-		namespace Chams
-		{
-			inline bool enabled = false;
-            inline HealthColorVar allyColor = ImColor(0, 0, 255, 255);
-            inline HealthColorVar allyVisibleColor = ImColor(0, 255, 0, 255);
-            inline HealthColorVar enemyColor = ImColor(255, 0, 0, 255);
-            inline HealthColorVar enemyVisibleColor = ImColor(255, 255, 0, 255);
-            inline HealthColorVar localplayerColor = ImColor(0, 255, 255, 255);
-			inline ChamsType type = ChamsType::CHAMS;
-
-			namespace Arms
-			{
-				inline bool enabled = false;
-				inline ColorVar color = ImColor(255, 255, 255, 255);
-				inline ArmsType type = ArmsType::DEFAULT;
-			}
-
-			namespace Weapon
-			{
-				inline bool enabled = false;
-				inline ColorVar color = ImColor( 255, 255, 255, 255 );
-				inline WeaponType type = WeaponType::DEFAULT;
-			}
 		}
 
 		// sound esp
