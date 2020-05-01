@@ -367,7 +367,6 @@ void Settings::LoadDefaultsOrSave(std::string path)
 	settings[XORSTR("ESP")][XORSTR("DangerZone")][XORSTR("drawDistEnabled")] = Settings::ESP::DangerZone::drawDistEnabled;
 	settings[XORSTR("ESP")][XORSTR("DangerZone")][XORSTR("upgrade")] = Settings::ESP::DangerZone::upgrade;
 	settings[XORSTR("ESP")][XORSTR("DangerZone")][XORSTR("lootcrate")] = Settings::ESP::DangerZone::lootcrate;
-	settings[XORSTR("ESP")][XORSTR("DangerZone")][XORSTR("radarjammer")] = Settings::ESP::DangerZone::radarjammer;
 	settings[XORSTR("ESP")][XORSTR("DangerZone")][XORSTR("barrel")] = Settings::ESP::DangerZone::barrel;
 	settings[XORSTR("ESP")][XORSTR("DangerZone")][XORSTR("ammobox")] = Settings::ESP::DangerZone::ammobox;
 	settings[XORSTR("ESP")][XORSTR("DangerZone")][XORSTR("safe")] = Settings::ESP::DangerZone::safe;
@@ -379,7 +378,6 @@ void Settings::LoadDefaultsOrSave(std::string path)
 	settings[XORSTR("ESP")][XORSTR("DangerZone")][XORSTR("melee")] = Settings::ESP::DangerZone::melee;
 	LoadColor(settings[XORSTR("ESP")][XORSTR("DangerZone")][XORSTR("upgrade_color")], Settings::ESP::DangerZone::upgradeColor);
 	LoadColor(settings[XORSTR("ESP")][XORSTR("DangerZone")][XORSTR("lootcrate_color")], Settings::ESP::DangerZone::lootcrateColor);
-	LoadColor(settings[XORSTR("ESP")][XORSTR("DangerZone")][XORSTR("radarjammer_color")], Settings::ESP::DangerZone::radarjammerColor);
 	LoadColor(settings[XORSTR("ESP")][XORSTR("DangerZone")][XORSTR("barrel_color")], Settings::ESP::DangerZone::barrelColor);
 	LoadColor(settings[XORSTR("ESP")][XORSTR("DangerZone")][XORSTR("ammobox_color")], Settings::ESP::DangerZone::ammoboxColor);
 	LoadColor(settings[XORSTR("ESP")][XORSTR("DangerZone")][XORSTR("safe_color")], Settings::ESP::DangerZone::safeColor);
@@ -427,28 +425,6 @@ void Settings::LoadDefaultsOrSave(std::string path)
 	settings[XORSTR("AutoStrafe")][XORSTR("enabled")] = Settings::AutoStrafe::enabled;
 	settings[XORSTR("AutoStrafe")][XORSTR("type")] = (int) Settings::AutoStrafe::type;
 	settings[XORSTR("AutoStrafe")][XORSTR("silent")] = Settings::AutoStrafe::silent;
-
-	settings[XORSTR("Radar")][XORSTR("enabled")] = Settings::Radar::enabled;
-	settings[XORSTR("Radar")][XORSTR("zoom")] = Settings::Radar::zoom;
-	settings[XORSTR("Radar")][XORSTR("enemies")] = Settings::Radar::enemies;
-	settings[XORSTR("Radar")][XORSTR("allies")] = Settings::Radar::allies;
-	settings[XORSTR("Radar")][XORSTR("legit")] = Settings::Radar::legit;
-	settings[XORSTR("Radar")][XORSTR("visibility_check")] = Settings::Radar::visibilityCheck;
-	settings[XORSTR("Radar")][XORSTR("smoke_check")] = Settings::Radar::smokeCheck;
-	settings[XORSTR("Radar")][XORSTR("InGame")][XORSTR("enabled")] = Settings::Radar::InGame::enabled;
-	settings[XORSTR("Radar")][XORSTR("pos")][XORSTR("x")] = Settings::Radar::pos.x;
-	settings[XORSTR("Radar")][XORSTR("pos")][XORSTR("y")] = Settings::Radar::pos.y;
-	LoadColor(settings[XORSTR("Radar")][XORSTR("enemy_color")], Settings::Radar::enemyColor);
-	LoadColor(settings[XORSTR("Radar")][XORSTR("enemy_visible_color")], Settings::Radar::enemyVisibleColor);
-	LoadColor(settings[XORSTR("Radar")][XORSTR("ally_color")], Settings::Radar::allyColor);
-	LoadColor(settings[XORSTR("Radar")][XORSTR("ally_visible_color")], Settings::Radar::allyVisibleColor);
-	LoadColor(settings[XORSTR("Radar")][XORSTR("t_color")], Settings::Radar::tColor);
-	LoadColor(settings[XORSTR("Radar")][XORSTR("t_visible_color")], Settings::Radar::tVisibleColor);
-	LoadColor(settings[XORSTR("Radar")][XORSTR("ct_color")], Settings::Radar::ctColor);
-	LoadColor(settings[XORSTR("Radar")][XORSTR("ct_visible_color")], Settings::Radar::ctVisibleColor);
-	LoadColor(settings[XORSTR("Radar")][XORSTR("bomb_color")], Settings::Radar::bombColor);
-	LoadColor(settings[XORSTR("Radar")][XORSTR("bomb_defusing_color")], Settings::Radar::bombDefusingColor);
-	settings[XORSTR("Radar")][XORSTR("icons_scale")] = Settings::Radar::iconsScale;
 
 	settings[XORSTR("FOVChanger")][XORSTR("enabled")] = Settings::FOVChanger::enabled;
 	settings[XORSTR("FOVChanger")][XORSTR("value")] = Settings::FOVChanger::value;
@@ -840,7 +816,6 @@ void Settings::LoadConfig(std::string path)
 	GetVal(settings[XORSTR("ESP")][XORSTR("DangerZone")][XORSTR("drawDistEnabled")], &Settings::ESP::DangerZone::drawDistEnabled);
 	GetVal(settings[XORSTR("ESP")][XORSTR("DangerZone")][XORSTR("upgrade")], &Settings::ESP::DangerZone::upgrade);
 	GetVal(settings[XORSTR("ESP")][XORSTR("DangerZone")][XORSTR("lootcrate")], &Settings::ESP::DangerZone::lootcrate);
-	GetVal(settings[XORSTR("ESP")][XORSTR("DangerZone")][XORSTR("radarjammer")], &Settings::ESP::DangerZone::radarjammer);
 	GetVal(settings[XORSTR("ESP")][XORSTR("DangerZone")][XORSTR("barrel")], &Settings::ESP::DangerZone::barrel);
 	GetVal(settings[XORSTR("ESP")][XORSTR("DangerZone")][XORSTR("ammobox")], &Settings::ESP::DangerZone::ammobox);
 	GetVal(settings[XORSTR("ESP")][XORSTR("DangerZone")][XORSTR("safe")], &Settings::ESP::DangerZone::safe);
@@ -852,7 +827,6 @@ void Settings::LoadConfig(std::string path)
 	GetVal(settings[XORSTR("ESP")][XORSTR("DangerZone")][XORSTR("melee")], &Settings::ESP::DangerZone::melee);
 	GetVal(settings[XORSTR("ESP")][XORSTR("DangerZone")][XORSTR("upgrade_color")], &Settings::ESP::DangerZone::upgradeColor);
 	GetVal(settings[XORSTR("ESP")][XORSTR("DangerZone")][XORSTR("lootcrate_color")], &Settings::ESP::DangerZone::lootcrateColor);
-	GetVal(settings[XORSTR("ESP")][XORSTR("DangerZone")][XORSTR("radarjammer_color")], &Settings::ESP::DangerZone::radarjammerColor);
 	GetVal(settings[XORSTR("ESP")][XORSTR("DangerZone")][XORSTR("barrel_color")], &Settings::ESP::DangerZone::barrelColor);
 	GetVal(settings[XORSTR("ESP")][XORSTR("DangerZone")][XORSTR("ammobox_color")], &Settings::ESP::DangerZone::ammoboxColor);
 	GetVal(settings[XORSTR("ESP")][XORSTR("DangerZone")][XORSTR("safe_color")], &Settings::ESP::DangerZone::safeColor);
@@ -901,28 +875,6 @@ void Settings::LoadConfig(std::string path)
 	GetVal(settings[XORSTR("AutoStrafe")][XORSTR("enabled")], &Settings::AutoStrafe::enabled);
 	GetVal(settings[XORSTR("AutoStrafe")][XORSTR("type")], (int*)& Settings::AutoStrafe::type);
 	GetVal(settings[XORSTR("AutoStrafe")][XORSTR("silent")], &Settings::AutoStrafe::silent);
-
-	GetVal(settings[XORSTR("Radar")][XORSTR("enabled")], &Settings::Radar::enabled);
-	GetVal(settings[XORSTR("Radar")][XORSTR("zoom")], &Settings::Radar::zoom);
-	GetVal(settings[XORSTR("Radar")][XORSTR("enemies")], &Settings::Radar::enemies);
-	GetVal(settings[XORSTR("Radar")][XORSTR("allies")], &Settings::Radar::allies);
-	GetVal(settings[XORSTR("Radar")][XORSTR("legit")], &Settings::Radar::legit);
-	GetVal(settings[XORSTR("Radar")][XORSTR("visibility_check")], &Settings::Radar::visibilityCheck);
-	GetVal(settings[XORSTR("Radar")][XORSTR("smoke_check")], &Settings::Radar::smokeCheck);
-	GetVal(settings[XORSTR("Radar")][XORSTR("InGame")][XORSTR("enabled")], &Settings::Radar::InGame::enabled);
-	GetVal(settings[XORSTR("Radar")][XORSTR("pos")][XORSTR("x")], &Settings::Radar::pos.x);
-	GetVal(settings[XORSTR("Radar")][XORSTR("pos")][XORSTR("y")], &Settings::Radar::pos.y);
-	GetVal(settings[XORSTR("Radar")][XORSTR("enemy_color")], &Settings::Radar::enemyColor);
-	GetVal(settings[XORSTR("Radar")][XORSTR("enemy_visible_color")], &Settings::Radar::enemyVisibleColor);
-	GetVal(settings[XORSTR("Radar")][XORSTR("ally_color")], &Settings::Radar::allyColor);
-	GetVal(settings[XORSTR("Radar")][XORSTR("ally_visible_color")], &Settings::Radar::allyVisibleColor);
-	GetVal(settings[XORSTR("Radar")][XORSTR("t_color")], &Settings::Radar::tColor);
-	GetVal(settings[XORSTR("Radar")][XORSTR("t_visible_color")], &Settings::Radar::tVisibleColor);
-	GetVal(settings[XORSTR("Radar")][XORSTR("ct_color")], &Settings::Radar::ctColor);
-	GetVal(settings[XORSTR("Radar")][XORSTR("ct_visible_color")], &Settings::Radar::ctVisibleColor);
-	GetVal(settings[XORSTR("Radar")][XORSTR("bomb_color")], &Settings::Radar::bombColor);
-	GetVal(settings[XORSTR("Radar")][XORSTR("bomb_defusing_color")], &Settings::Radar::bombDefusingColor);
-	GetVal(settings[XORSTR("Radar")][XORSTR("icons_scale")], &Settings::Radar::iconsScale);
 
 	GetVal(settings[XORSTR("FOVChanger")][XORSTR("enabled")], &Settings::FOVChanger::enabled);
 	GetVal(settings[XORSTR("FOVChanger")][XORSTR("value")], &Settings::FOVChanger::value);

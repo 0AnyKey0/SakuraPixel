@@ -799,7 +799,6 @@ namespace Settings
 			inline bool drawDistEnabled = false;
 			inline bool upgrade = false;
 			inline bool lootcrate = false;
-			inline bool radarjammer = false;
 			inline bool barrel = false;
 			inline bool ammobox = false;
 			inline bool safe = false;
@@ -811,7 +810,6 @@ namespace Settings
 			inline bool melee = false;
             inline ColorVar upgradeColor = ImColor(255, 0, 0, 255);
             inline ColorVar lootcrateColor = ImColor(255, 0, 0, 255);
-            inline ColorVar radarjammerColor = ImColor(255, 0, 0, 255);
             inline ColorVar barrelColor = ImColor(255, 0, 0, 255);
             inline ColorVar ammoboxColor = ImColor(255, 0, 0, 255);
             inline ColorVar safeColor = ImColor(255, 0, 0, 255);
@@ -913,38 +911,6 @@ namespace Settings
 		inline float value = 100.0f;
 		inline float viewmodelValue = 90.0f;
 		inline bool ignoreScope = true;
-	}
-
-	namespace Radar
-	{
-		inline bool enabled = false;
-		inline float zoom = 16.0f;
-		inline bool enemies = false;
-		inline bool allies = false;
-		inline bool bomb = false;
-		inline bool defuser = false;
-		inline bool legit = false ;
-		inline bool visibilityCheck = false;
-		inline bool smokeCheck = false;
-		inline TeamColorType teamColorType = TeamColorType::RELATIVE;
-        inline HealthColorVar enemyColor = ImColor(255, 0, 0, 255);
-        inline HealthColorVar enemyVisibleColor = ImColor(255, 255, 0, 255);
-        inline HealthColorVar allyColor = ImColor(0, 0, 255, 255);
-        inline HealthColorVar allyVisibleColor = ImColor(0, 255, 0, 255);
-        inline HealthColorVar tColor = ImColor(255, 0, 0, 255);
-        inline HealthColorVar tVisibleColor = ImColor(255, 255, 0, 255);
-        inline HealthColorVar ctColor = ImColor(0, 0, 255, 255);
-        inline HealthColorVar ctVisibleColor = ImColor(0, 255, 0, 255);
-        inline ColorVar bombColor = ImColor(156, 39, 176, 255);
-        inline ColorVar bombDefusingColor = ImColor(213, 0, 249, 255);
-        inline ColorVar defuserColor = ImColor(49, 27, 146, 255);
-		inline float iconsScale = 4.5f;
-		inline ImVec2 pos = ImVec2(0,0);
-
-		namespace InGame
-		{
-			inline bool enabled = false;
-		}
 	}
 
 	namespace Autoblock

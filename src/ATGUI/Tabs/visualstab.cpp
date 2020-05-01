@@ -148,7 +148,6 @@ void Visuals::RenderTab()
 				ImGui::Checkbox(XORSTR("Loot Crates"), &Settings::ESP::DangerZone::lootcrate);
 				ImGui::Checkbox(XORSTR("Weapon Upgrades"), &Settings::ESP::DangerZone::upgrade);
 				ImGui::Checkbox(XORSTR("Ammo box"), &Settings::ESP::DangerZone::ammobox);
-				ImGui::Checkbox(XORSTR("Radar Jammer"), &Settings::ESP::DangerZone::radarjammer);
 				ImGui::Checkbox(XORSTR("Cash"), &Settings::ESP::DangerZone::cash);
 				ImGui::Checkbox(XORSTR("Drone"), &Settings::ESP::DangerZone::drone);
 				ImGui::Checkbox(XORSTR("Draw Distance"), &Settings::ESP::DangerZone::drawDistEnabled);
@@ -368,35 +367,6 @@ void Visuals::RenderTab()
 					ImGui::Checkbox(XORSTR("Just Dots"), &Settings::Debug::BoneMap::justDrawDots);
 				ImGui::SliderInt(XORSTR("Test Model ID"), &Settings::Debug::BoneMap::modelID, 1253, 1350, XORSTR("Model ID: %0.f") );
 			}
-			ImGui::Columns(1);
-			ImGui::Separator();
-			ImGui::Text(XORSTR("Radar"));
-			ImGui::Separator();
-			ImGui::Columns(2, nullptr, true);
-			{
-				ImGui::Checkbox(XORSTR("Radar"), &Settings::Radar::enabled);
-				ImGui::PushItemWidth(-1);
-				ImGui::Combo(XORSTR("##RADARTEAMCOLTYPE"), (int*)& Settings::Radar::teamColorType, TeamColorTypes, IM_ARRAYSIZE(TeamColorTypes));
-				ImGui::PopItemWidth();
-				ImGui::Checkbox(XORSTR("Enemies"), &Settings::Radar::enemies);
-				ImGui::Checkbox(XORSTR("Bomb"), &Settings::Radar::bomb);
-				ImGui::Checkbox(XORSTR("Legit"), &Settings::Radar::legit);
-				ImGui::Checkbox(XORSTR("In-game Radar"), &Settings::Radar::InGame::enabled);
-			}
-			ImGui::NextColumn();
-			{
-				ImGui::PushItemWidth(-1);
-				ImGui::SliderFloat(XORSTR("##RADARZOOM"), &Settings::Radar::zoom, 0.f, 100.f, XORSTR("Zoom: %0.f"));
-				ImGui::SliderFloat(XORSTR("##RADARICONSSCALE"), &Settings::Radar::iconsScale, 2, 16, XORSTR("Icons Scale: %0.1f"));
-				ImGui::PopItemWidth();
-				ImGui::Checkbox(XORSTR("Allies"), &Settings::Radar::allies);
-				ImGui::Checkbox(XORSTR("Defuser"), &Settings::Radar::defuser);
-				ImGui::Checkbox(XORSTR("Visibility Check"), &Settings::Radar::visibilityCheck);
-				ImGui::Checkbox(XORSTR("Smoke Check"), &Settings::Radar::smokeCheck);
-			}
-			ImGui::Columns(1);
-			ImGui::Separator();
-
 			ImGui::Text(XORSTR("Hitmarkers"));
 			ImGui::Separator();
 			ImGui::Columns(2, nullptr, true);

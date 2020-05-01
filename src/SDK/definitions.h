@@ -340,7 +340,6 @@ enum class EClassIds : int
 	CPhysMagnet,
 	CPhysPropAmmoBox,
 	CPhysPropLootCrate,
-	CPhysPropRadarJammer,
 	CPhysPropWeaponUpgrade,
 	CPlantedC4,
 	CPlasma,

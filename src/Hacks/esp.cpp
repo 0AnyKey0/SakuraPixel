@@ -1068,13 +1068,6 @@ static void DrawSentryTurret(C_BaseEntity *sentry, C_BasePlayer* localplayer)
     DrawEntity(sentry, name.c_str(), Settings::ESP::DangerZone::dronegunColor.Color());
 }
 
-static void DrawRadarJammer(C_BaseEntity *jammer, C_BasePlayer* localplayer)
-{
-	if (!dzShouldDraw(jammer, localplayer))
-		return;
-    DrawEntity(jammer, XORSTR("Radar Jammer"), Settings::ESP::DangerZone::radarjammerColor.Color());
-}
-
 static void DrawExplosiveBarrel(C_BaseEntity *barrel, C_BasePlayer* localplayer)
 {
 	if (!dzShouldDraw(barrel, localplayer))
@@ -1537,9 +1530,6 @@ void ESP::Paint()
 
 			else if (Settings::ESP::DangerZone::ammobox && client->m_ClassID == EClassIds::CPhysPropAmmoBox)
 				DrawAmmoBox(entity, localplayer);
-
-			else if (Settings::ESP::DangerZone::radarjammer && client->m_ClassID == EClassIds::CPhysPropRadarJammer)
-				DrawRadarJammer(entity, localplayer);
 
 			else if (Settings::ESP::DangerZone::barrel && client->m_ClassID == EClassIds::CPhysicsProp)
 				DrawExplosiveBarrel(entity, localplayer);
