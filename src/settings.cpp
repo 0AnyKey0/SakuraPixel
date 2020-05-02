@@ -7,7 +7,6 @@
 #include "json/json.h"
 #include "fonts.h"
 #include "Utils/draw.h"
-#include "Hacks/clantagchanger.h"
 #include "Hacks/skinchanger.h"
 #include "Utils/util.h"
 #include "Utils/util_items.h"
@@ -450,13 +449,6 @@ void Settings::LoadDefaultsOrSave(std::string path)
 	settings[XORSTR("UI")][XORSTR("Windows")][XORSTR("Spectators")][XORSTR("posY")] = Settings::UI::Windows::Spectators::posY;
 	settings[XORSTR("UI")][XORSTR("Windows")][XORSTR("Spectators")][XORSTR("sizeX")] = Settings::UI::Windows::Spectators::sizeX;
 	settings[XORSTR("UI")][XORSTR("Windows")][XORSTR("Spectators")][XORSTR("sizeY")] = Settings::UI::Windows::Spectators::sizeY;
-
-
-	settings[XORSTR("ClanTagChanger")][XORSTR("value")] = Settings::ClanTagChanger::value;
-	settings[XORSTR("ClanTagChanger")][XORSTR("enabled")] = Settings::ClanTagChanger::enabled;
-	settings[XORSTR("ClanTagChanger")][XORSTR("animation")] = Settings::ClanTagChanger::animation;
-	settings[XORSTR("ClanTagChanger")][XORSTR("animation_speed")] = Settings::ClanTagChanger::animationSpeed;
-	settings[XORSTR("ClanTagChanger")][XORSTR("type")] = (int) Settings::ClanTagChanger::type;
 
 	settings[XORSTR("View")][XORSTR("NoViewPunch")][XORSTR("enabled")] = Settings::View::NoViewPunch::enabled;
 	settings[XORSTR("View")][XORSTR("NoAimPunch")][XORSTR("enabled")] = Settings::View::NoAimPunch::enabled;
@@ -907,13 +899,6 @@ void Settings::LoadConfig(std::string path)
 	Settings::UI::Windows::Playerlist::reload = true;
 	Settings::UI::Windows::Skinmodel::reload = true;
 	Settings::UI::Windows::Spectators::reload = true;
-
-	GetVal(settings[XORSTR("ClanTagChanger")][XORSTR("value")], (char *)& Settings::ClanTagChanger::value);
-	GetVal(settings[XORSTR("ClanTagChanger")][XORSTR("enabled")], &Settings::ClanTagChanger::enabled);
-	GetVal(settings[XORSTR("ClanTagChanger")][XORSTR("animation")], &Settings::ClanTagChanger::animation);
-	GetVal(settings[XORSTR("ClanTagChanger")][XORSTR("animation_speed")], &Settings::ClanTagChanger::animationSpeed);
-	GetVal(settings[XORSTR("ClanTagChanger")][XORSTR("type")], (int*)& Settings::ClanTagChanger::type);
-	::ClanTagChanger::UpdateClanTagCallback();
 
 	GetVal(settings[XORSTR("View")][XORSTR("NoViewPunch")][XORSTR("enabled")], &Settings::View::NoViewPunch::enabled);
 	GetVal(settings[XORSTR("View")][XORSTR("NoAimPunch")][XORSTR("enabled")], &Settings::View::NoAimPunch::enabled);

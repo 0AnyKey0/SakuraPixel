@@ -13,7 +13,6 @@
 #include "../atgui.h"
 
 #include "../../Hacks/grenadehelper.h"
-#include "../../Hacks/clantagchanger.h"
 
 #pragma GCC diagnostic ignored "-Wformat-security"
 
@@ -176,41 +175,6 @@ void Misc::RenderTab()
 	{
 		ImGui::BeginChild(XORSTR("Child2"), ImVec2(0, 0), true);
 		{
-			ImGui::Text(XORSTR("Clantag"));
-			ImGui::Separator();
-			ImGui::Columns(2, nullptr, true);
-			{
-				ImGui::PushItemWidth(-1);
-				ImGui::Checkbox(XORSTR("Enabled"), &Settings::ClanTagChanger::enabled);
-				ImGui::PopItemWidth();
-			}
-			ImGui::NextColumn();
-			{
-				ImGui::PushItemWidth(-1);
-				if (ImGui::Button(XORSTR("Update Clantag"), ImVec2(-1, 0)))
-					ClanTagChanger::UpdateClanTagCallback();
-				ImGui::PopItemWidth();
-			}
-			ImGui::Columns(1);
-			ImGui::Separator();
-			ImGui::Columns(2, nullptr, true);
-			{
-				ImGui::PushItemWidth(-1);
-				ImGui::InputText(XORSTR("##CLANTAG"), Settings::ClanTagChanger::value, 30);
-				ImGui::PopItemWidth();
-
-				ImGui::ItemSize(ImVec2(0.0f, 0.0f), 0.0f);
-				ImGui::Text(XORSTR("Animation Delay(ms)"));
-			}
-			ImGui::NextColumn();
-			{
-				ImGui::PushItemWidth(-1);
-				if (ImGui::Combo(XORSTR("##ANIMATIONTYPE"), (int*)& Settings::ClanTagChanger::type, animationTypes, IM_ARRAYSIZE(animationTypes)))
-					ClanTagChanger::UpdateClanTagCallback();
-				if (ImGui::SliderInt(XORSTR("##ANIMATIONSPEED"), &Settings::ClanTagChanger::animationSpeed, 500, 2000))
-					ClanTagChanger::UpdateClanTagCallback();
-				ImGui::PopItemWidth();
-			}
 
 			ImGui::Columns(1);
 			ImGui::Separator();

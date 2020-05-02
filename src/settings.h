@@ -880,15 +880,6 @@ namespace Settings
         };
 	}
 
-	namespace ClanTagChanger
-	{
-		inline char value[30] = {0};
-		inline bool animation = false;
-		inline int animationSpeed = 650;
-		inline bool enabled = false;
-		inline ClanTagType type = ClanTagType::STATIC;
-	}
-
 	namespace View
 	{
 		namespace NoAimPunch

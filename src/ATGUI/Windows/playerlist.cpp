@@ -8,7 +8,6 @@
 #include "../../Hacks/aimbot.h"
 #include "../../Hacks/esp.h"
 #include "../../Hacks/resolver.h"
-#include "../../Hacks/clantagchanger.h"
 
 #pragma GCC diagnostic ignored "-Wformat-security"
 
@@ -195,16 +194,6 @@ void PlayerList::RenderWindow()
 					cmd.append(XORSTR("callvote kick "));
 					cmd.append(std::to_string(entityInformation.userid));
 					engine->ClientCmd_Unrestricted(cmd.c_str());
-				}
-
-				const char* clanTag = (*csPlayerResource)->GetClan(currentPlayer);
-				if (clanTag && clanTag[0] && ImGui::Button(XORSTR("Steal clan tag")))
-				{
-					Settings::ClanTagChanger::enabled = true;
-					strcpy(Settings::ClanTagChanger::value, clanTag);
-					Settings::ClanTagChanger::type = ClanTagType::STATIC;
-
-					ClanTagChanger::UpdateClanTagCallback();
 				}
 			}
 			ImGui::NextColumn();
