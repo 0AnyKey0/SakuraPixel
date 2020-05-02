@@ -933,11 +933,6 @@ namespace Settings
         inline ShowedAngle type = ShowedAngle::REAL;
 	}
 
-	namespace DisablePostProcessing
-	{
-		inline bool enabled = false;
-	}
-
 	namespace GrenadeHelper
 	{
 		inline std::vector<GrenadeInfo> grenadeInfos = {};
