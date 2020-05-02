@@ -463,9 +463,6 @@ void Settings::LoadDefaultsOrSave(std::string path)
 	settings[XORSTR("Autoblock")][XORSTR("enabled")] = Settings::Autoblock::enabled;
 	settings[XORSTR("Autoblock")][XORSTR("key")] = Settings::Autoblock::key;
 
-	settings[XORSTR("AutoDefuse")][XORSTR("enabled")] = Settings::AutoDefuse::enabled;
-	settings[XORSTR("AutoDefuse")][XORSTR("silent")] = Settings::AutoDefuse::silent;
-
 	settings[XORSTR("ScreenshotCleaner")][XORSTR("enabled")] = Settings::ScreenshotCleaner::enabled;
 
 	settings[XORSTR("EdgeJump")][XORSTR("enabled")] = Settings::EdgeJump::enabled;
@@ -905,9 +902,6 @@ void Settings::LoadConfig(std::string path)
 
 	GetVal(settings[XORSTR("Autoblock")][XORSTR("enabled")], &Settings::Autoblock::enabled);
 	GetButtonCode(settings[XORSTR("Autoblock")][XORSTR("key")], &Settings::Autoblock::key);
-
-	GetVal(settings[XORSTR("AutoDefuse")][XORSTR("enabled")], &Settings::AutoDefuse::enabled);
-	GetVal(settings[XORSTR("AutoDefuse")][XORSTR("silent")], &Settings::AutoDefuse::silent);
 
 	GetVal(settings[XORSTR("ScreenshotCleaner")][XORSTR("enabled")], &Settings::ScreenshotCleaner::enabled);
 

@@ -909,12 +909,6 @@ namespace Settings
 		inline bool enabled = false;
 	}
 
-	namespace AutoDefuse
-	{
-		inline bool enabled = false;
-		inline bool silent = false;
-	}
-
 	namespace ScreenshotCleaner
 	{
 		inline bool enabled = false;

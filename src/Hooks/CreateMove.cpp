@@ -3,7 +3,6 @@
 #include "../interfaces.h"
 #include "../settings.h"
 
-#include "../Hacks/autodefuse.h"
 #include "../Hacks/grenadehelper.h"
 #include "../Hacks/grenadeprediction.h"
 #include "../Hacks/edgejump.h"
@@ -30,7 +29,6 @@ bool Hooks::CreateMove(void* thisptr, float flInputSampleTime, CUserCmd* cmd)
         bool *sendPacket = ((*(bool **)rbp) - 0x18);
         CreateMove::sendPacket = true;
 
-		AutoDefuse::CreateMove(cmd);
 		GrenadeHelper::CreateMove(cmd);
         GrenadePrediction::CreateMove( cmd );
         EdgeJump::PrePredictionCreateMove(cmd);
