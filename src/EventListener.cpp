@@ -5,7 +5,6 @@
 #include "Hacks/hitmarkers.h"
 #include "Hacks/resolver.h"
 #include "Hacks/skinchanger.h"
-#include "Hacks/spammer.h"
 #include "interfaces.h"
 #include "SDK/IGameEvent.h"
 
@@ -26,7 +25,6 @@ void EventListener::FireGameEvent(IGameEvent* event)
     Hitmarkers::FireGameEvent(event);
     Eventlog::FireGameEvent(event);
     Resolver::FireGameEvent(event);
-    Spammer::FireGameEvent(event);
     SkinChanger::FireGameEvent(event);
 }
 

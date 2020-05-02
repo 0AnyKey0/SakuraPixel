@@ -23,7 +23,6 @@ void Misc::RenderTab()
 {
 	const char* strafeTypes[] = { "Forwards", "Backwards", "Left", "Right", "Rage" };
 	const char* animationTypes[] = { "Static", "Marquee", "Words", "Letters" };
-	const char* spammerTypes[] = { "None", "Normal", "Positions" };
 	const char* teams[] = { "Allies", "Enemies", "Both" };
 	const char* grenadeTypes[] = { "FLASH", "SMOKE", "MOLOTOV", "HEGRENADE" };
 	const char* throwTypes[] = { "NORMAL", "RUN", "JUMP", "WALK" };
@@ -83,122 +82,7 @@ void Misc::RenderTab()
 
 			ImGui::Columns(1);
 			ImGui::Separator();
-			ImGui::Text(XORSTR("Spammer"));
-			ImGui::Separator();
 
-			ImGui::Columns(3, nullptr, true);
-			{
-				ImGui::Checkbox(XORSTR("Kill Messages"), &Settings::Spammer::KillSpammer::enabled);
-			}
-			ImGui::NextColumn();
-			{
-				ImGui::Checkbox(XORSTR("Team Chat###SAY_TEAM1"), &Settings::Spammer::KillSpammer::sayTeam);
-			}
-			ImGui::NextColumn();
-			{
-				if (ImGui::Button(XORSTR("Options###KILL")))
-					ImGui::OpenPopup(XORSTR("options_kill"));
-
-				ImGui::SetNextWindowSize(ImVec2(565, 268), ImGuiSetCond_Always);
-				if (ImGui::BeginPopup(XORSTR("options_kill")))
-				{
-					static int killSpammerMessageCurrent = -1;
-					static char killSpammerMessageBuf[126];
-
-					ImGui::PushItemWidth(445);
-					ImGui::InputText(XORSTR("###SPAMMERMESSAGE"), killSpammerMessageBuf, IM_ARRAYSIZE(killSpammerMessageBuf));
-					ImGui::PopItemWidth();
-					ImGui::SameLine();
-
-					if (ImGui::Button(XORSTR("Add")))
-					{
-						if (strlen(killSpammerMessageBuf) > 0)
-							Settings::Spammer::KillSpammer::messages.push_back(std::string(killSpammerMessageBuf));
-
-						strcpy(killSpammerMessageBuf, "");
-					}
-					ImGui::SameLine();
-
-					if (ImGui::Button(XORSTR("Remove")))
-						if (killSpammerMessageCurrent > -1 && (int) Settings::Spammer::KillSpammer::messages.size() > killSpammerMessageCurrent)
-							Settings::Spammer::KillSpammer::messages.erase(Settings::Spammer::KillSpammer::messages.begin() + killSpammerMessageCurrent);
-
-					ImGui::PushItemWidth(550);
-					ImGui::ListBox("", &killSpammerMessageCurrent, Settings::Spammer::KillSpammer::messages, 10);
-					ImGui::PopItemWidth();
-
-					ImGui::EndPopup();
-				}
-			}
-
-			ImGui::Columns(1);
-			ImGui::Checkbox(XORSTR("Radio Commands"), &Settings::Spammer::RadioSpammer::enabled);
-
-			ImGui::Columns(3, nullptr, true);
-			{
-				ImGui::Combo(XORSTR("###SPAMMERYPE"), (int*)&Settings::Spammer::type, spammerTypes, IM_ARRAYSIZE(spammerTypes));
-			}
-			ImGui::NextColumn();
-			{
-				ImGui::Checkbox(XORSTR("Team Chat###SAY_TEAM2"), &Settings::Spammer::say_team);
-			}
-			ImGui::NextColumn();
-			{
-				if (Settings::Spammer::type != SpammerType::SPAMMER_NONE && ImGui::Button(XORSTR("Options###SPAMMER")))
-					ImGui::OpenPopup(XORSTR("options_spammer"));
-
-				if (Settings::Spammer::type == SpammerType::SPAMMER_NORMAL)
-					ImGui::SetNextWindowSize(ImVec2(565, 268), ImGuiSetCond_Always);
-				else if (Settings::Spammer::type == SpammerType::SPAMMER_POSITIONS)
-					ImGui::SetNextWindowSize(ImVec2(200, 240), ImGuiSetCond_Always);
-
-				if (Settings::Spammer::type != SpammerType::SPAMMER_NONE && ImGui::BeginPopup(XORSTR("options_spammer")))
-				{
-					if (Settings::Spammer::type == SpammerType::SPAMMER_NORMAL)
-					{
-						static int spammerMessageCurrent = -1;
-						static char spammerMessageBuf[126];
-
-						ImGui::PushItemWidth(445);
-						ImGui::InputText(XORSTR("###SPAMMERMESSAGE"), spammerMessageBuf, IM_ARRAYSIZE(spammerMessageBuf));
-						ImGui::PopItemWidth();
-						ImGui::SameLine();
-
-						if (ImGui::Button(XORSTR("Add")))
-						{
-							if (strlen(spammerMessageBuf) > 0)
-								Settings::Spammer::NormalSpammer::messages.push_back(std::string(spammerMessageBuf));
-
-							strcpy(spammerMessageBuf, "");
-						}
-						ImGui::SameLine();
-
-						if (ImGui::Button(XORSTR("Remove")))
-							if (spammerMessageCurrent > -1 && (int) Settings::Spammer::NormalSpammer::messages.size() > spammerMessageCurrent)
-								Settings::Spammer::NormalSpammer::messages.erase(Settings::Spammer::NormalSpammer::messages.begin() + spammerMessageCurrent);
-
-						ImGui::PushItemWidth(550);
-						ImGui::ListBox("", &spammerMessageCurrent, Settings::Spammer::NormalSpammer::messages, 10);
-						ImGui::PopItemWidth();
-					}
-					else if (Settings::Spammer::type == SpammerType::SPAMMER_POSITIONS)
-					{
-						ImGui::PushItemWidth(185);
-						ImGui::Combo(XORSTR("###POSITIONSTEAM"), &Settings::Spammer::PositionSpammer::team, teams, IM_ARRAYSIZE(teams));
-						ImGui::PopItemWidth();
-						ImGui::Separator();
-						ImGui::Checkbox(XORSTR("Show Name"), &Settings::Spammer::PositionSpammer::showName);
-						ImGui::Checkbox(XORSTR("Show Weapon"), &Settings::Spammer::PositionSpammer::showWeapon);
-						ImGui::Checkbox(XORSTR("Show Rank"), &Settings::Spammer::PositionSpammer::showRank);
-						ImGui::Checkbox(XORSTR("Show Wins"), &Settings::Spammer::PositionSpammer::showWins);
-						ImGui::Checkbox(XORSTR("Show Health"), &Settings::Spammer::PositionSpammer::showHealth);
-						ImGui::Checkbox(XORSTR("Show Money"), &Settings::Spammer::PositionSpammer::showMoney);
-						ImGui::Checkbox(XORSTR("Show Last Place"), &Settings::Spammer::PositionSpammer::showLastplace);
-					}
-
-					ImGui::EndPopup();
-				}
-			}
 			ImGui::Columns(1);
 			ImGui::Separator();
 			ImGui::Text(XORSTR("FOV"));

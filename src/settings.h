@@ -130,13 +130,6 @@ enum class AimTargetType : int
 	HP,
 };
 
-enum class SpammerType : int
-{
-	SPAMMER_NONE,
-	SPAMMER_NORMAL,
-	SPAMMER_POSITIONS,
-};
-
 enum class ShowedAngle : int
 {
     REAL,
@@ -809,41 +802,6 @@ namespace Settings
 		inline float lines = 10;
 		inline ColorVar color = ImColor( 255, 79, 56, 255 );
 	}	
-
-	namespace Spammer
-	{
-		inline SpammerType type = SpammerType::SPAMMER_NONE;
-		inline bool say_team = false;
-
-		namespace KillSpammer
-		{
-			inline bool enabled = false;
-			inline bool sayTeam = false;
-			inline std::vector<std::string> messages = {};
-		}
-
-		namespace RadioSpammer
-		{
-			inline bool enabled = false;
-		}
-
-		namespace NormalSpammer
-		{
-			inline std::vector<std::string> messages = {};
-		}
-
-		namespace PositionSpammer
-		{
-			inline int team = 1;
-			inline bool showName = true;
-			inline bool showWeapon = true;
-			inline bool showRank = true;
-			inline bool showWins = true;
-			inline bool showHealth = true;
-			inline bool showMoney = true;
-			inline bool showLastplace = true;
-		}
-	}
 
 	namespace BHop
 	{
