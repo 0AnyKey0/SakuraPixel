@@ -4,7 +4,6 @@
 #include "../../Utils/xorstring.h"
 #include "../../ImGUI/imgui_internal.h"
 #include "../atgui.h"
-#include "../../Hacks/materialconfig.h"
 
 #pragma GCC diagnostic ignored "-Wformat-security"
 

@@ -773,11 +773,6 @@ namespace Settings
 		}
 	}
 
-	namespace MaterialConfig {
-		inline bool enabled = false;
-		inline MaterialSystem_Config_t config = {};
-	}
-
 	namespace Dlights
 	{
 		inline bool enabled = false;

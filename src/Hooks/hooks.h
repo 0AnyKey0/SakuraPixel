@@ -23,7 +23,6 @@ namespace Hooks
 	void SetMouseCodeState(void* thisptr, ButtonCode_t code, MouseCodeState_t state);
 
 	/* Material */
-	void OverrideConfig( void* thisptr, MaterialSystem_Config_t* config, bool forceUpdate );
 	void BeginFrame(void* thisptr, float frameTime);
 
 	/* ModelRender */

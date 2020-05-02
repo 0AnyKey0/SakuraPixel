@@ -91,7 +91,6 @@ void MainThread()
     launcherMgrVMT->ApplyVMT();
 
     materialVMT = new VMT(material);
-    materialVMT->HookVM(Hooks::OverrideConfig, 21);
     materialVMT->HookVM(Hooks::BeginFrame, 42);
 	materialVMT->ApplyVMT();
 
