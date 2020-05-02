@@ -498,11 +498,6 @@ void Settings::LoadDefaultsOrSave(std::string path)
 	settings[XORSTR("GrenadePrediction")][XORSTR("enabled")] = Settings::GrenadePrediction::enabled;
 	LoadColor(settings[XORSTR("GrenadePrediction")][XORSTR("color")], Settings::GrenadePrediction::color);
 
-	settings[XORSTR("AutoKnife")][XORSTR("enabled")] = Settings::AutoKnife::enabled;
- 	settings[XORSTR("AutoKnife")][XORSTR("Filters")][XORSTR("enemies")] = Settings::AutoKnife::Filters::enemies;
- 	settings[XORSTR("AutoKnife")][XORSTR("Filters")][XORSTR("allies")] = Settings::AutoKnife::Filters::allies;
- 	settings[XORSTR("AutoKnife")][XORSTR("onKey")] = Settings::AutoKnife::onKey;
-
 	std::ofstream(path) << styledWriter.write(settings);
 }
 
@@ -946,10 +941,6 @@ void Settings::LoadConfig(std::string path)
 	GetVal(settings[XORSTR("GrenadePrediction")][XORSTR("enabled")], &Settings::GrenadePrediction::enabled);
 	GetVal(settings[XORSTR("GrenadePrediction")][XORSTR("color")], &Settings::GrenadePrediction::color);
 
-	GetVal(settings[XORSTR("AutoKnife")][XORSTR("enabled")], &Settings::AutoKnife::enabled);
- 	GetVal(settings[XORSTR("AutoKnife")][XORSTR("Filters")][XORSTR("enemies")], &Settings::AutoKnife::Filters::enemies);
- 	GetVal(settings[XORSTR("AutoKnife")][XORSTR("Filters")][XORSTR("allies")], &Settings::AutoKnife::Filters::allies);
- 	GetVal(settings[XORSTR("AutoKnife")][XORSTR("onKey")], &Settings::AutoKnife::onKey);
 }
 
 void Settings::SaveGrenadeInfo(std::string path)

@@ -49,24 +49,6 @@ void Triggerbot::RenderTab()
 				ImGui::Text(XORSTR("Maximum ms"));
 				ImGui::SliderInt(XORSTR("##TRIGGERRANDOMHIGH"), &Settings::Triggerbot::RandomDelay::highBound, (Settings::Triggerbot::RandomDelay::lowBound+1), 225);
 			}
-			ImGui::Columns(1);
-			ImGui::Separator();
-
-			ImGui::Text(XORSTR("Auto Knife & Zeus"));
- 			ImGui::Separator();
- 			ImGui::Columns(2, nullptr, true);
- 			{
- 					ImGui::PushItemWidth(-1);
- 					ImGui::Checkbox(XORSTR("Auto Knife"), &Settings::AutoKnife::enabled);
- 					ImGui::Checkbox(XORSTR("On Key"), &Settings::AutoKnife::onKey);
-
- 			}
- 			ImGui::NextColumn();
- 			{
- 					ImGui::PushItemWidth(-1);
- 					ImGui::Checkbox(XORSTR("Enemies"), &Settings::AutoKnife::Filters::enemies);
- 					ImGui::Checkbox(XORSTR("Allies"), &Settings::AutoKnife::Filters::allies);
- 			}
 
 			ImGui::EndChild();
 		}

@@ -11,7 +11,6 @@
 #include "../Hacks/predictionsystem.h"
 #include "../Hacks/aimbot.h"
 #include "../Hacks/triggerbot.h"
-#include "../Hacks/autoknife.h"
 #include "../Hacks/antiaim.h"
 #include "../Hacks/esp.h"
 
@@ -26,13 +25,11 @@ bool Hooks::CreateMove(void* thisptr, float flInputSampleTime, CUserCmd* cmd)
 
 	if (cmd && cmd->command_number)
 	{
-        // Special thanks to Gre-- I mean Heep ( https://www.unknowncheats.me/forum/counterstrike-global-offensive/290258-updating-bsendpacket-linux.html )
         uintptr_t rbp;
         asm volatile("mov %%rbp, %0" : "=r" (rbp));
         bool *sendPacket = ((*(bool **)rbp) - 0x18);
         CreateMove::sendPacket = true;
 
-		/* run code that affects movement before prediction */
 		AutoDefuse::CreateMove(cmd);
 		GrenadeHelper::CreateMove(cmd);
         GrenadePrediction::CreateMove( cmd );
@@ -42,7 +39,6 @@ bool Hooks::CreateMove(void* thisptr, float flInputSampleTime, CUserCmd* cmd)
 		PredictionSystem::StartPrediction(cmd);
 			Aimbot::CreateMove(cmd);
 			Triggerbot::CreateMove(cmd);
-			AutoKnife::CreateMove(cmd);
             AntiAim::CreateMove(cmd);
 			ESP::CreateMove(cmd);
 		PredictionSystem::EndPrediction();

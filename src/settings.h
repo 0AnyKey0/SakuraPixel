@@ -958,17 +958,6 @@ namespace Settings
 
 	}
 
-	namespace AutoKnife
- 	{
- 		inline bool enabled = false;
- 		inline bool onKey = true;
-
- 		namespace Filters
- 		{
- 			inline bool enemies = true;
- 			inline bool allies = false;
- 		}
- 	}
     namespace Debug
     {
         namespace AutoWall
