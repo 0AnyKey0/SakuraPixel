@@ -501,9 +501,6 @@ void Settings::LoadDefaultsOrSave(std::string path)
 	settings[XORSTR("NoSky")][XORSTR("enabled")] = Settings::NoSky::enabled;
 	LoadColor(settings[XORSTR("NoSky")][XORSTR("color")], Settings::NoSky::color);
 
-	settings[XORSTR("ASUSWalls")][XORSTR("enabled")] = Settings::ASUSWalls::enabled;
-	LoadColor(settings[XORSTR("ASUSWalls")][XORSTR("color")], Settings::ASUSWalls::color);
-
 	settings[XORSTR("NoScopeBorder")][XORSTR("enabled")] = Settings::NoScopeBorder::enabled;
 
 	settings[XORSTR("Autoblock")][XORSTR("enabled")] = Settings::Autoblock::enabled;
@@ -996,9 +993,6 @@ void Settings::LoadConfig(std::string path)
 
 	GetVal(settings[XORSTR("NoSky")][XORSTR("enabled")], &Settings::NoSky::enabled);
 	GetVal(settings[XORSTR("NoSky")][XORSTR("color")], &Settings::NoSky::color);
-
-	GetVal(settings[XORSTR("ASUSWalls")][XORSTR("enabled")], &Settings::ASUSWalls::enabled);
-	GetVal(settings[XORSTR("ASUSWalls")][XORSTR("color")], &Settings::ASUSWalls::color);
 
 	GetVal(settings[XORSTR("NoScopeBorder")][XORSTR("enabled")], &Settings::NoScopeBorder::enabled);
 

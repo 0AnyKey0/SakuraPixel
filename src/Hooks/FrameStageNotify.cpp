@@ -6,7 +6,6 @@
 #include "../Hacks/skinchanger.h"
 #include "../Hacks/view.h"
 #include "../Hacks/resolver.h"
-#include "../Hacks/asuswalls.h"
 #include "../Hacks/thirdperson.h"
 
 typedef void (*FrameStageNotifyFn) (void*, ClientFrameStage_t);
@@ -18,7 +17,6 @@ void Hooks::FrameStageNotify(void* thisptr, ClientFrameStage_t stage)
 	SkinChanger::FrameStageNotifySkins(stage);
 	View::FrameStageNotify(stage);
 	Resolver::FrameStageNotify(stage);
-	ASUSWalls::FrameStageNotify(stage);
 	ThirdPerson::FrameStageNotify(stage);
 
 	if (SkinChanger::forceFullUpdate)

@@ -990,12 +990,6 @@ namespace Settings
 		inline ColorVar color = ImColor(0, 0, 0, 255);
 	}
 
-	namespace ASUSWalls
-	{
-		inline bool enabled = false;
-		inline ColorVar color = ImColor(255, 255, 255, 150);
-	}
-
 	namespace NoScopeBorder
 	{
 		inline bool enabled = false;
