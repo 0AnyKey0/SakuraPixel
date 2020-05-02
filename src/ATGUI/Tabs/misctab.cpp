@@ -37,24 +37,8 @@ void Misc::RenderTab()
 
 			ImGui::Columns(2, nullptr, true);
 			{
-				ImGui::Checkbox(XORSTR("Auto Strafe"), &Settings::AutoStrafe::enabled);
 				ImGui::Checkbox(XORSTR("Edge Jump"), &Settings::EdgeJump::enabled);
 			}
-			ImGui::NextColumn();
-			{
-				ImGui::PushItemWidth(Settings::AutoStrafe::type == AutostrafeType::AS_RAGE ? ImGui::CalcItemWidth() : -1);
-				ImGui::Combo(XORSTR("##STRAFETYPE"), (int*)& Settings::AutoStrafe::type, strafeTypes, IM_ARRAYSIZE(strafeTypes));
-
-				if (Settings::AutoStrafe::type == AutostrafeType::AS_RAGE)
-				{
-					ImGui::SameLine();
-					ImGui::Checkbox(XORSTR("Silent"), &Settings::AutoStrafe::silent);
-				}
-
-				ImGui::PopItemWidth();
-				UI::KeyBindButton(&Settings::EdgeJump::key);
-			}
-
 			ImGui::Columns(1);
 			ImGui::Separator();
 

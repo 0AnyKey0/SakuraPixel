@@ -378,10 +378,6 @@ void Settings::LoadDefaultsOrSave(std::string path)
 	settings[XORSTR("Dlights")][XORSTR("enabled")] = Settings::Dlights::enabled;
 	settings[XORSTR("Dlights")][XORSTR("radius")] = Settings::Dlights::radius;
 
-	settings[XORSTR("AutoStrafe")][XORSTR("enabled")] = Settings::AutoStrafe::enabled;
-	settings[XORSTR("AutoStrafe")][XORSTR("type")] = (int) Settings::AutoStrafe::type;
-	settings[XORSTR("AutoStrafe")][XORSTR("silent")] = Settings::AutoStrafe::silent;
-
 	settings[XORSTR("FOVChanger")][XORSTR("enabled")] = Settings::FOVChanger::enabled;
 	settings[XORSTR("FOVChanger")][XORSTR("value")] = Settings::FOVChanger::value;
 	settings[XORSTR("FOVChanger")][XORSTR("viewmodel_enabled")] = Settings::FOVChanger::viewmodelEnabled;
@@ -779,10 +775,6 @@ void Settings::LoadConfig(std::string path)
 
 	GetVal(settings[XORSTR("Dlights")][XORSTR("enabled")], &Settings::Dlights::enabled);
 	GetVal(settings[XORSTR("Dlights")][XORSTR("radius")], &Settings::Dlights::radius);
-
-	GetVal(settings[XORSTR("AutoStrafe")][XORSTR("enabled")], &Settings::AutoStrafe::enabled);
-	GetVal(settings[XORSTR("AutoStrafe")][XORSTR("type")], (int*)& Settings::AutoStrafe::type);
-	GetVal(settings[XORSTR("AutoStrafe")][XORSTR("silent")], &Settings::AutoStrafe::silent);
 
 	GetVal(settings[XORSTR("FOVChanger")][XORSTR("enabled")], &Settings::FOVChanger::enabled);
 	GetVal(settings[XORSTR("FOVChanger")][XORSTR("value")], &Settings::FOVChanger::value);

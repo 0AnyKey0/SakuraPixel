@@ -41,15 +41,6 @@ enum class ClanTagType : int
 	LETTERS,
 };
 
-enum class AutostrafeType : int
-{
-	AS_FORWARDS,
-	AS_BACKWARDS,
-	AS_LEFTSIDEWAYS,
-	AS_RIGHTSIDEWAYS,
-	AS_RAGE,
-};
-
 enum class BoxType : int
 {
 	FLAT_2D,
@@ -802,13 +793,6 @@ namespace Settings
 		inline float lines = 10;
 		inline ColorVar color = ImColor( 255, 79, 56, 255 );
 	}	
-
-	namespace AutoStrafe
-	{
-		inline bool enabled = false;
-		inline AutostrafeType type = AutostrafeType::AS_FORWARDS;
-		inline bool silent = true;
-	}
 
 	namespace FOVChanger
 	{
