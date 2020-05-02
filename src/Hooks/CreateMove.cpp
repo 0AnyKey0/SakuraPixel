@@ -3,7 +3,6 @@
 #include "../interfaces.h"
 #include "../settings.h"
 
-#include "../Hacks/bhop.h"
 #include "../Hacks/autostrafe.h"
 #include "../Hacks/autodefuse.h"
 #include "../Hacks/grenadehelper.h"
@@ -35,7 +34,6 @@ bool Hooks::CreateMove(void* thisptr, float flInputSampleTime, CUserCmd* cmd)
         CreateMove::sendPacket = true;
 
 		/* run code that affects movement before prediction */
-		BHop::CreateMove(cmd);
 		AutoStrafe::CreateMove(cmd);
 		AutoDefuse::CreateMove(cmd);
 		GrenadeHelper::CreateMove(cmd);

@@ -803,25 +803,6 @@ namespace Settings
 		inline ColorVar color = ImColor( 255, 79, 56, 255 );
 	}	
 
-	namespace BHop
-	{
-		inline bool enabled = false;
-
-		namespace Chance
-		{
-			inline bool enabled = false;
-			inline int value = 70;
-		}
-
-		namespace Hops
-		{
-			inline bool enabledMax = false;
-			inline int Max = 7;
-			inline bool enabledMin = false;
-			inline int Min = 3;
-		}
-	}
-
 	namespace AutoStrafe
 	{
 		inline bool enabled = false;
