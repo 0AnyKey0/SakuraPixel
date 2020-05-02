@@ -565,11 +565,6 @@ namespace Settings
         }
     }
 
-	namespace Resolver
-	{
-		inline bool resolveAll = false;
-	}
-
 	namespace ESP
 	{
 		inline bool enabled = false;

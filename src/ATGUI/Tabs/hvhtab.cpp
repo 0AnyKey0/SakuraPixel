@@ -85,10 +85,6 @@ void HvH::RenderTab()
     {
         ImGui::BeginChild(XORSTR("HVH2"), ImVec2(0, 0), true);
         {
-            ImGui::Text(XORSTR("Resolver"));
-            ImGui::Separator();
-            ImGui::Checkbox(XORSTR("Resolve All"), &Settings::Resolver::resolveAll);
-            ImGui::Separator();
             ImGui::Text(XORSTR("Movement"));
             ImGui::Checkbox(XORSTR("Auto Crouch"), &Settings::Aimbot::AutoCrouch::enabled);
             ImGui::Separator();

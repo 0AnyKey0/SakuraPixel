@@ -5,7 +5,6 @@
 #include "../Hacks/customglow.h"
 #include "../Hacks/skinchanger.h"
 #include "../Hacks/view.h"
-#include "../Hacks/resolver.h"
 #include "../Hacks/thirdperson.h"
 
 typedef void (*FrameStageNotifyFn) (void*, ClientFrameStage_t);
@@ -16,7 +15,6 @@ void Hooks::FrameStageNotify(void* thisptr, ClientFrameStage_t stage)
 	SkinChanger::FrameStageNotifyModels(stage);
 	SkinChanger::FrameStageNotifySkins(stage);
 	View::FrameStageNotify(stage);
-	Resolver::FrameStageNotify(stage);
 	ThirdPerson::FrameStageNotify(stage);
 
 	if (SkinChanger::forceFullUpdate)
@@ -27,6 +25,5 @@ void Hooks::FrameStageNotify(void* thisptr, ClientFrameStage_t stage)
 
 	clientVMT->GetOriginalMethod<FrameStageNotifyFn>(37)(thisptr, stage);
 
-	Resolver::PostFrameStageNotify(stage);
 	View::PostFrameStageNotify(stage);
 }

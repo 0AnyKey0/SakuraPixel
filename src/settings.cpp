@@ -229,8 +229,6 @@ void Settings::LoadDefaultsOrSave(std::string path)
 	settings[XORSTR("AntiAim")][XORSTR("LBYBreaker")][XORSTR("enabled")] = Settings::AntiAim::LBYBreaker::enabled;
 	settings[XORSTR("AntiAim")][XORSTR("LBYBreaker")][XORSTR("offset")] = Settings::AntiAim::LBYBreaker::offset;
 
-	settings[XORSTR("Resolver")][XORSTR("resolve_all")] = Settings::Resolver::resolveAll;
-
 	settings[XORSTR("Triggerbot")][XORSTR("enabled")] = Settings::Triggerbot::enabled;
 	settings[XORSTR("Triggerbot")][XORSTR("key")] = Util::GetButtonName(Settings::Triggerbot::key);
 	settings[XORSTR("Triggerbot")][XORSTR("Filters")][XORSTR("enemies")] = Settings::Triggerbot::Filters::enemies;
@@ -609,8 +607,6 @@ void Settings::LoadConfig(std::string path)
 	GetVal(settings[XORSTR("AntiAim")][XORSTR("HeadEdge")][XORSTR("distance")], &Settings::AntiAim::HeadEdge::distance);
 	GetVal(settings[XORSTR("AntiAim")][XORSTR("LBYBreaker")][XORSTR("enabled")], &Settings::AntiAim::LBYBreaker::enabled);
 	GetVal(settings[XORSTR("AntiAim")][XORSTR("LBYBreaker")][XORSTR("offset")], &Settings::AntiAim::LBYBreaker::offset);
-
-	GetVal(settings[XORSTR("Resolver")][XORSTR("resolve_all")], &Settings::Resolver::resolveAll);
 
 	GetVal(settings[XORSTR("Triggerbot")][XORSTR("enabled")], &Settings::Triggerbot::enabled);
 	GetButtonCode(settings[XORSTR("Triggerbot")][XORSTR("key")], &Settings::Triggerbot::key);
