@@ -908,24 +908,6 @@ namespace Settings
         inline ShowedAngle type = ShowedAngle::REAL;
 	}
 
-	namespace GrenadeHelper
-	{
-		inline std::vector<GrenadeInfo> grenadeInfos = {};
-		inline bool enabled = false;
-		inline bool onlyMatchingInfos = true;
-		inline bool aimAssist = false;
-		inline float aimStep = 5;
-		inline float aimDistance = 75;
-		inline float aimFov = 45;
-        inline ColorVar aimDot = ImColor(10, 10, 200, 255);
-        inline ColorVar aimLine = ImColor(200, 200, 200, 255);
-        inline ColorVar infoHE = ImColor(7, 183, 7, 255);
-        inline ColorVar infoMolotov = ImColor(236, 0, 0, 255);
-        inline ColorVar infoSmoke = ImColor(172, 172, 172, 255);
-        inline ColorVar infoFlash = ImColor(255, 255, 0, 255);
-		inline std::string actMapName = {};
-	}
-
     namespace Debug
     {
         namespace AutoWall

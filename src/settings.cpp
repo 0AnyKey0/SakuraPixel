@@ -471,19 +471,6 @@ void Settings::LoadDefaultsOrSave(std::string path)
 	settings[XORSTR("ThirdPerson")][XORSTR("distance")] = Settings::ThirdPerson::distance;
 	settings[XORSTR("ThirdPerson")][XORSTR("type")] = (int) Settings::ThirdPerson::type;
 
-	settings[XORSTR("GrenadeHelper")][XORSTR("enabled")] = Settings::GrenadeHelper::enabled;
-	settings[XORSTR("GrenadeHelper")][XORSTR("aimAssist")] = Settings::GrenadeHelper::aimAssist;
-	settings[XORSTR("GrenadeHelper")][XORSTR("OnlyMatching")] = Settings::GrenadeHelper::onlyMatchingInfos;
-	settings[XORSTR("GrenadeHelper")][XORSTR("aimStep")] = Settings::GrenadeHelper::aimStep;
-	settings[XORSTR("GrenadeHelper")][XORSTR("aimDistance")] = Settings::GrenadeHelper::aimDistance;
-	settings[XORSTR("GrenadeHelper")][XORSTR("aimFov")] = Settings::GrenadeHelper::aimFov;
-	LoadColor(settings[XORSTR("GrenadeHelper")][XORSTR("aimDot")], Settings::GrenadeHelper::aimDot);
-	LoadColor(settings[XORSTR("GrenadeHelper")][XORSTR("aimLine")], Settings::GrenadeHelper::aimLine);
-	LoadColor(settings[XORSTR("GrenadeHelper")][XORSTR("infoHe")], Settings::GrenadeHelper::infoHE);
-	LoadColor(settings[XORSTR("GrenadeHelper")][XORSTR("infoSmoke")], Settings::GrenadeHelper::infoSmoke);
-	LoadColor(settings[XORSTR("GrenadeHelper")][XORSTR("infoMolotov")], Settings::GrenadeHelper::infoMolotov);
-	LoadColor(settings[XORSTR("GrenadeHelper")][XORSTR("infoFlash")], Settings::GrenadeHelper::infoFlash);
-
 	std::ofstream(path) << styledWriter.write(settings);
 }
 
@@ -898,80 +885,6 @@ void Settings::LoadConfig(std::string path)
 	GetVal(settings[XORSTR("ThirdPerson")][XORSTR("enabled")], &Settings::ThirdPerson::enabled);
 	GetVal(settings[XORSTR("ThirdPerson")][XORSTR("distance")], &Settings::ThirdPerson::distance);
 	GetVal(settings[XORSTR("ThirdPerson")][XORSTR("type")], (int*)&Settings::ThirdPerson::type);
-
-	GetVal(settings[XORSTR("GrenadeHelper")][XORSTR("enabled")], &Settings::GrenadeHelper::enabled);
-	GetVal(settings[XORSTR("GrenadeHelper")][XORSTR("aimAssist")], &Settings::GrenadeHelper::aimAssist);
-	GetVal(settings[XORSTR("GrenadeHelper")][XORSTR("OnlyMatching")], &Settings::GrenadeHelper::onlyMatchingInfos);
-	GetVal(settings[XORSTR("GrenadeHelper")][XORSTR("aimStep")], &Settings::GrenadeHelper::aimStep);
-	GetVal(settings[XORSTR("GrenadeHelper")][XORSTR("aimDistance")], &Settings::GrenadeHelper::aimDistance);
-	GetVal(settings[XORSTR("GrenadeHelper")][XORSTR("aimFov")], &Settings::GrenadeHelper::aimFov);
-	GetVal(settings[XORSTR("GrenadeHelper")][XORSTR("aimDot")], &Settings::GrenadeHelper::aimDot);
-	GetVal(settings[XORSTR("GrenadeHelper")][XORSTR("aimLine")], &Settings::GrenadeHelper::aimLine);
-	GetVal(settings[XORSTR("GrenadeHelper")][XORSTR("infoHE")], &Settings::GrenadeHelper::infoHE);
-	GetVal(settings[XORSTR("GrenadeHelper")][XORSTR("infoSmoke")], &Settings::GrenadeHelper::infoSmoke);
-	GetVal(settings[XORSTR("GrenadeHelper")][XORSTR("infoFlash")], &Settings::GrenadeHelper::infoFlash);
-	GetVal(settings[XORSTR("GrenadeHelper")][XORSTR("infoMolotov")], &Settings::GrenadeHelper::infoMolotov);
-}
-
-void Settings::SaveGrenadeInfo(std::string path)
-{
-	Json::Value grenadeInfos;
-	for (auto grenadeInfo = GrenadeHelper::grenadeInfos.begin(); grenadeInfo != GrenadeHelper::grenadeInfos.end(); grenadeInfo++)
-	{
-		Json::Value act;
-		act[XORSTR("name")] = grenadeInfo->name.c_str();
-		act[XORSTR("gType")] = grenadeInfo->gType;
-		act[XORSTR("tType")] = grenadeInfo->tType;
-		act[XORSTR("pos")][XORSTR("x")] = grenadeInfo->pos.x;
-		act[XORSTR("pos")][XORSTR("y")] = grenadeInfo->pos.y;
-		act[XORSTR("pos")][XORSTR("z")] = grenadeInfo->pos.z;
-
-		act[XORSTR("angle")][XORSTR("x")] = grenadeInfo->angle.x;
-		act[XORSTR("angle")][XORSTR("y")] = grenadeInfo->angle.y;
-
-		grenadeInfos.append(act);
-	}
-
-	Json::Value data;
-	Json::StyledWriter styledWriter;
-
-	data[XORSTR("smokeinfos")] = grenadeInfos;
-
-	std::ofstream(path) << styledWriter.write(data);
-}
-
-void Settings::LoadGrenadeInfo(std::string path)
-{
-	if (!std::ifstream(path).good() || !DoesFileExist(path.c_str()))
-		return;
-	Json::Value data;
-	std::ifstream configDoc(path, std::ifstream::binary);
-	try {
-		configDoc >> data;
-	}
-	catch (...)
-	{
-		cvar->ConsoleDPrintf(XORSTR("Error parsing the config file.\n"));
-		return;
-	}
-
-	Json::Value array = data[XORSTR("smokeinfos")];
-	Settings::GrenadeHelper::grenadeInfos = {};
-
-	for (Json::Value::iterator it = array.begin(); it != array.end(); ++it)
-	{
-		Json::Value& act = *it;
-
-		const char* name = act[XORSTR("name")].asCString();
-
-		GrenadeType gType = (GrenadeType)act[XORSTR("gType")].asInt();
-		ThrowType tType = (ThrowType)act[XORSTR("tType")].asInt();
-		Json::Value pos = act[XORSTR("pos")];
-		Vector posVec(pos[XORSTR("x")].asFloat(), pos[XORSTR("y")].asFloat(), pos[XORSTR("z")].asFloat());
-		Json::Value angle = act[XORSTR("angle")];
-		QAngle vAngle(angle[XORSTR("x")].asFloat(), angle[XORSTR("y")].asFloat(), 0.f);
-		Settings::GrenadeHelper::grenadeInfos.emplace_back(gType, posVec, vAngle, tType, name);
-	}
 }
 
 void remove_directory(const char* path)
