@@ -2,7 +2,6 @@
 
 #include "../interfaces.h"
 
-#include "../Hacks/customglow.h"
 #include "../Hacks/skinchanger.h"
 #include "../Hacks/view.h"
 #include "../Hacks/thirdperson.h"
@@ -11,7 +10,6 @@ typedef void (*FrameStageNotifyFn) (void*, ClientFrameStage_t);
 
 void Hooks::FrameStageNotify(void* thisptr, ClientFrameStage_t stage)
 {
-	CustomGlow::FrameStageNotify(stage);
 	SkinChanger::FrameStageNotifyModels(stage);
 	SkinChanger::FrameStageNotifySkins(stage);
 	View::FrameStageNotify(stage);
