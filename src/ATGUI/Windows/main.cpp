@@ -37,32 +37,6 @@ void Main::RenderWindow()
 		temp = ImGui::GetWindowPos();
 		Settings::UI::Windows::Main::posX = (int)temp.x;
 		Settings::UI::Windows::Main::posY = (int)temp.y;
-		const char* tabs[] = {
-				"Aimbot",
-				"Triggerbot",
-				"Visuals",
-				"HvH",
-		};
-
-		for (int i = 0; i < IM_ARRAYSIZE(tabs); i++)
-		{
-			int distance = i == page ? 0 : i > page ? i - page : page - i;
-
-			ImGui::GetStyle().Colors[ImGuiCol_Button] = ImVec4(
-					Settings::UI::mainColor.Color().Value.x - (distance * 0.035f),
-					Settings::UI::mainColor.Color().Value.y - (distance * 0.035f),
-					Settings::UI::mainColor.Color().Value.z - (distance * 0.035f),
-					Settings::UI::mainColor.Color().Value.w
-			);
-
-			if (ImGui::Button(tabs[i], ImVec2(ImGui::GetWindowSize().x / IM_ARRAYSIZE(tabs) - 9, 0)))
-				page = i;
-
-			ImGui::GetStyle().Colors[ImGuiCol_Button] = Settings::UI::accentColor.Color();
-
-			if (i < IM_ARRAYSIZE(tabs) - 1)
-				ImGui::SameLine();
-		}
 
 		ImGui::End();
 	}
