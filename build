@@ -54,3 +54,5 @@ patchelf --set-soname "$BUILD_ID" "$BUILD_ID" || echo_orange "Warning: your patc
 chmod 400 build_id # Make the build_id read-only for safety.
 
 echo "Build Completed."
+
+./clean

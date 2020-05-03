@@ -332,15 +332,6 @@ namespace Settings
 				inline bool open = false;
 				inline bool reload = false; // True on config load, used to change Window Position.
 			}
-			namespace Playerlist
-			{
-				inline int posX = 700;
-				inline int posY = 500;
-				inline int sizeX = 700;
-				inline int sizeY = 500;
-				inline bool open = false;
-				inline bool reload = false; // True on config load, used to change Window Position.
-			}
 			namespace Skinmodel
 			{
 				inline int posX = 20;
