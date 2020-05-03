@@ -5,7 +5,6 @@
 
 #include "../Hacks/fovchanger.h"
 #include "../Hacks/thirdperson.h"
-#include "../Hacks/grenadeprediction.h"
 
 float OverrideView::currentFOV = 90.0f;
 
@@ -15,7 +14,6 @@ void Hooks::OverrideView(void* thisptr, CViewSetup* pSetup)
 {
 	if (!Settings::ScreenshotCleaner::enabled || !engine->IsTakingScreenshot())
 	{
-		GrenadePrediction::OverrideView(pSetup);
 		FOVChanger::OverrideView(pSetup);
 		ThirdPerson::OverrideView(pSetup);
 	}

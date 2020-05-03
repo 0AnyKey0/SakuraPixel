@@ -37,12 +37,6 @@ namespace Hooks
 	/* Surface */
 	void OnScreenSizeChanged(void* thisptr, int oldwidth, int oldheight);
 
-	/* ViewRender */
-	void RenderView(void* thisptr, CViewSetup& setup, CViewSetup& hudViewSetup, unsigned int nClearFlags, int whatToDraw);
-
-
-
-
 	/* OpenGL Hooks */
 	int PumpWindowsMessageLoop(void* thisptr, void* unknown);
 
@@ -73,17 +67,3 @@ namespace SetKeyCodeState
 	extern bool shouldListen;
 	extern ButtonCode_t* keyOutput;
 }
-
-namespace RenderView
-{
-	struct RenderRequest
-	{
-		int destX, destY;
-		int width, height;
-		ITexture* tex;
-		IMaterial* mat;
-	};
-
-	extern std::queue<RenderView::RenderRequest> renderQueue;
-}
-typedef void (*RenderViewFn) (void*, CViewSetup&, CViewSetup&, unsigned int, int);

@@ -45,4 +45,6 @@ if [ -f build_id_old ]; then
     fi
 fi
 
+clear
+
 echo "Done. See CS:GO Console."

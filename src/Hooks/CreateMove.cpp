@@ -4,7 +4,6 @@
 #include "../settings.h"
 
 #include "../Hacks/grenadehelper.h"
-#include "../Hacks/grenadeprediction.h"
 #include "../Hacks/edgejump.h"
 #include "../Hacks/autoblock.h"
 #include "../Hacks/predictionsystem.h"
@@ -30,7 +29,6 @@ bool Hooks::CreateMove(void* thisptr, float flInputSampleTime, CUserCmd* cmd)
         CreateMove::sendPacket = true;
 
 		GrenadeHelper::CreateMove(cmd);
-        GrenadePrediction::CreateMove( cmd );
         EdgeJump::PrePredictionCreateMove(cmd);
 		Autoblock::CreateMove(cmd);
 

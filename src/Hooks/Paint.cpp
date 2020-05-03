@@ -8,7 +8,6 @@
 #include "../Hacks/esp.h"
 #include "../Hacks/dlights.h"
 #include "../Hacks/grenadehelper.h"
-#include "../Hacks/grenadeprediction.h"
 #include "../Hacks/hitmarkers.h"
 #include "../Hacks/eventlog.h"
 
@@ -45,7 +44,6 @@ void Hooks::Paint(void* thisptr, PaintMode_t mode)
         GrenadeHelper::Paint();
         Hitmarkers::Paint();
         Eventlog::Paint();
-        GrenadePrediction::Paint();
 
         if( Settings::ESP::backend == DrawingBackend::SURFACE ){
             StartDrawing(surface);

@@ -926,13 +926,6 @@ namespace Settings
 		inline std::string actMapName = {};
 	}
 
-	namespace GrenadePrediction
-	{
-		inline bool enabled = false;
-		inline ColorVar color = ImColor( 255, 79, 56, 255 );
-
-	}
-
     namespace Debug
     {
         namespace AutoWall

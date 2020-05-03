@@ -1644,13 +1644,6 @@ enum ClearFlags_t {
 	VIEW_CLEAR_STENCIL = 0x20,// 32
 };
 
-enum RenderViewInfo_t {
-	RENDERVIEW_UNSPECIFIED = 0,
-	RENDERVIEW_DRAWVIEWMODEL = ( 1 << 0 ), // 1
-	RENDERVIEW_DRAWHUD = ( 1 << 1 ), // 2
-	RENDERVIEW_SUPPRESSMONITORRENDERING = ( 1 << 2 ), // 4
-};
-
 struct GrenadeInfo
 {
 	GrenadeType gType;
