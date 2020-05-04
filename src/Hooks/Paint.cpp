@@ -6,7 +6,6 @@
 #include "../fonts.h"
 
 #include "../Hacks/esp.h"
-#include "../Hacks/hitmarkers.h"
 
 #include <mutex>
 
@@ -37,7 +36,6 @@ void Hooks::Paint(void* thisptr, PaintMode_t mode)
         ESP::PaintToUpdateMatrix(); // Just for updating the viewMatrix
         /* These functions make drawRequests */
         ESP::Paint();
-        Hitmarkers::Paint();
 
         if( Settings::ESP::backend == DrawingBackend::SURFACE ){
             StartDrawing(surface);

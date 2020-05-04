@@ -1,7 +1,6 @@
 #include "EventListener.h"
 
 #include "Hacks/aimbot.h"
-#include "Hacks/hitmarkers.h"
 #include "Hacks/skinchanger.h"
 #include "interfaces.h"
 #include "SDK/IGameEvent.h"
@@ -20,7 +19,6 @@ EventListener::~EventListener()
 void EventListener::FireGameEvent(IGameEvent* event)
 {
     Aimbot::FireGameEvent(event);
-    Hitmarkers::FireGameEvent(event);
     SkinChanger::FireGameEvent(event);
 }
 
