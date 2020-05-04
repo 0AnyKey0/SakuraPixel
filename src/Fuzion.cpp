@@ -102,10 +102,6 @@ void MainThread()
     panelVMT->HookVM(Hooks::PaintTraverse, 42);
     panelVMT->ApplyVMT();
 
-    soundVMT = new VMT(sound);
-    soundVMT->HookVM( Hooks::EmitSound2, 6);
-    soundVMT->ApplyVMT();
-
     surfaceVMT = new VMT(surface);
     surfaceVMT->HookVM(Hooks::OnScreenSizeChanged, 116);
 	surfaceVMT->ApplyVMT();

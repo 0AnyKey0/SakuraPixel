@@ -430,8 +430,6 @@ void Settings::LoadDefaultsOrSave(std::string path)
 	settings[XORSTR("View")][XORSTR("NoViewPunch")][XORSTR("enabled")] = Settings::View::NoViewPunch::enabled;
 	settings[XORSTR("View")][XORSTR("NoAimPunch")][XORSTR("enabled")] = Settings::View::NoAimPunch::enabled;
 
-	settings[XORSTR("AutoAccept")][XORSTR("enabled")] = Settings::AutoAccept::enabled;
-
 	settings[XORSTR("NoSky")][XORSTR("enabled")] = Settings::NoSky::enabled;
 	LoadColor(settings[XORSTR("NoSky")][XORSTR("color")], Settings::NoSky::color);
 
@@ -819,8 +817,6 @@ void Settings::LoadConfig(std::string path)
 
 	GetVal(settings[XORSTR("View")][XORSTR("NoViewPunch")][XORSTR("enabled")], &Settings::View::NoViewPunch::enabled);
 	GetVal(settings[XORSTR("View")][XORSTR("NoAimPunch")][XORSTR("enabled")], &Settings::View::NoAimPunch::enabled);
-
-	GetVal(settings[XORSTR("AutoAccept")][XORSTR("enabled")], &Settings::AutoAccept::enabled);
 
 	GetVal(settings[XORSTR("NoSky")][XORSTR("enabled")], &Settings::NoSky::enabled);
 	GetVal(settings[XORSTR("NoSky")][XORSTR("color")], &Settings::NoSky::color);

@@ -803,11 +803,6 @@ namespace Settings
 		}
 	}
 
-	namespace AutoAccept
-	{
-		inline bool enabled = false;
-	}
-
 	namespace NoSky
 	{
 		inline bool enabled = false;
