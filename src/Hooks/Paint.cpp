@@ -7,7 +7,6 @@
 
 #include "../Hacks/esp.h"
 #include "../Hacks/hitmarkers.h"
-#include "../Hacks/eventlog.h"
 
 #include <mutex>
 
@@ -39,7 +38,6 @@ void Hooks::Paint(void* thisptr, PaintMode_t mode)
         /* These functions make drawRequests */
         ESP::Paint();
         Hitmarkers::Paint();
-        Eventlog::Paint();
 
         if( Settings::ESP::backend == DrawingBackend::SURFACE ){
             StartDrawing(surface);

@@ -704,16 +704,6 @@ namespace Settings
 		}
 	}
 
-	namespace Eventlog
-	{
-		inline bool showEnemies = false;
-		inline bool showTeammates = false;
-		inline bool showLocalplayer = false;
-		inline float duration = 5000;
-		inline float lines = 10;
-		inline ColorVar color = ImColor( 255, 79, 56, 255 );
-	}	
-
 	namespace FOVChanger
 	{
 		inline bool enabled = false;
