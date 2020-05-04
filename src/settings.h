@@ -473,34 +473,6 @@ namespace Settings
         };
 	}
 
-	namespace Triggerbot
-	{
-		inline bool enabled = false;
-		inline ButtonCode_t key = ButtonCode_t::KEY_LALT;
-
-		namespace Filters
-		{
-			inline bool enemies = true;
-			inline bool allies = false;
-			inline bool walls = false;
-			inline bool smokeCheck = false;
-			inline bool flashCheck = false;
-			inline bool head = true;
-			inline bool chest = true;
-			inline bool stomach = true;
-			inline bool arms = true;
-			inline bool legs = true;
-		}
-
-		namespace RandomDelay
-		{
-			inline bool enabled = true;
-			inline int lowBound = 20; // in ms
-			inline int highBound = 35;// in ms
-			inline int lastRoll = 0;
-		}
-	}
-
 	namespace ESP
 	{
 		inline bool enabled = false;

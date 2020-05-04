@@ -5,7 +5,6 @@
 
 #include "../Hacks/autoblock.h"
 #include "../Hacks/aimbot.h"
-#include "../Hacks/triggerbot.h"
 #include "../Hacks/esp.h"
 
 bool CreateMove::sendPacket = true;
@@ -27,7 +26,6 @@ bool Hooks::CreateMove(void* thisptr, float flInputSampleTime, CUserCmd* cmd)
 		Autoblock::CreateMove(cmd);
 
 		Aimbot::CreateMove(cmd);
-		Triggerbot::CreateMove(cmd);
 		ESP::CreateMove(cmd);
 
         *sendPacket = CreateMove::sendPacket;
