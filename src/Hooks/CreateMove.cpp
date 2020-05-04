@@ -3,7 +3,6 @@
 #include "../interfaces.h"
 #include "../settings.h"
 
-#include "../Hacks/edgejump.h"
 #include "../Hacks/autoblock.h"
 #include "../Hacks/predictionsystem.h"
 #include "../Hacks/aimbot.h"
@@ -27,7 +26,6 @@ bool Hooks::CreateMove(void* thisptr, float flInputSampleTime, CUserCmd* cmd)
         bool *sendPacket = ((*(bool **)rbp) - 0x18);
         CreateMove::sendPacket = true;
 
-        EdgeJump::PrePredictionCreateMove(cmd);
 		Autoblock::CreateMove(cmd);
 
 		PredictionSystem::StartPrediction(cmd);
@@ -36,8 +34,6 @@ bool Hooks::CreateMove(void* thisptr, float flInputSampleTime, CUserCmd* cmd)
             AntiAim::CreateMove(cmd);
 			ESP::CreateMove(cmd);
 		PredictionSystem::EndPrediction();
-
-		EdgeJump::PostPredictionCreateMove(cmd);
 
         *sendPacket = CreateMove::sendPacket;
 

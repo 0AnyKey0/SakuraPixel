@@ -457,9 +457,6 @@ void Settings::LoadDefaultsOrSave(std::string path)
 
 	settings[XORSTR("ScreenshotCleaner")][XORSTR("enabled")] = Settings::ScreenshotCleaner::enabled;
 
-	settings[XORSTR("EdgeJump")][XORSTR("enabled")] = Settings::EdgeJump::enabled;
-	settings[XORSTR("EdgeJump")][XORSTR("key")] = Util::GetButtonName(Settings::EdgeJump::key);
-
 	settings[XORSTR("Eventlog")][XORSTR("showEnemies")] = Settings::Eventlog::showEnemies;
 	settings[XORSTR("Eventlog")][XORSTR("showTeammates")] = Settings::Eventlog::showTeammates;
 	settings[XORSTR("Eventlog")][XORSTR("showLocalplayer")] = Settings::Eventlog::showLocalplayer;
@@ -871,9 +868,6 @@ void Settings::LoadConfig(std::string path)
 	GetButtonCode(settings[XORSTR("Autoblock")][XORSTR("key")], &Settings::Autoblock::key);
 
 	GetVal(settings[XORSTR("ScreenshotCleaner")][XORSTR("enabled")], &Settings::ScreenshotCleaner::enabled);
-
-	GetVal(settings[XORSTR("EdgeJump")][XORSTR("enabled")], &Settings::EdgeJump::enabled);
-	GetButtonCode(settings[XORSTR("EdgeJump")][XORSTR("key")], &Settings::EdgeJump::key);
 
 	GetVal(settings[XORSTR("Eventlog")][XORSTR("showEnemies")], &Settings::Eventlog::showEnemies);
 	GetVal(settings[XORSTR("Eventlog")][XORSTR("showTeammates")], &Settings::Eventlog::showTeammates);

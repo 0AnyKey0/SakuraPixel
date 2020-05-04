@@ -895,12 +895,6 @@ namespace Settings
 		inline bool enabled = false;
 	}
 
-	namespace EdgeJump
-	{
-		inline bool enabled = false;
-		inline ButtonCode_t key = ButtonCode_t::KEY_C;
-	}
-
 	namespace ThirdPerson
 	{
 		inline bool enabled = false;
