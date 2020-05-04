@@ -275,10 +275,10 @@ namespace Settings
 {
 	namespace UI
 	{
-		inline ColorVar mainColor = ImColor(25, 25, 25, 255 );
-		inline ColorVar bodyColor = ImColor( 5, 5, 5, 255 );
-		inline ColorVar fontColor = ImColor( 255, 255, 255, 255 );
-		inline ColorVar accentColor = ImColor( 39, 106, 219, 255 );
+		inline ColorVar mainColor = ImColor(0, 87, 12, 255 );
+		inline ColorVar bodyColor = ImColor( 0, 0, 0, 255 );
+		inline ColorVar fontColor = ImColor( 255, 0, 0, 255 );
+		inline ColorVar accentColor = ImColor( 255, 255, 255, 255 );
 
         /* Window Position/Size Defaults */
         namespace Windows
@@ -338,7 +338,7 @@ namespace Settings
 			}
 		}
 	}
-    /* Default Aimbot Settings */
+
 	namespace Aimbot
 	{
 		inline bool enabled = false;
