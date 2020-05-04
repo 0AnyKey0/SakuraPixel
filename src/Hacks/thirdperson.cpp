@@ -1,5 +1,4 @@
 #include "thirdperson.h"
-#include "antiaim.h"
 
 #include "../settings.h"
 #include "../interfaces.h"
@@ -52,18 +51,5 @@ void ThirdPerson::FrameStageNotify(ClientFrameStage_t stage)
 	if (stage == ClientFrameStage_t::FRAME_RENDER_START && engine->IsInGame())
 	{
 		C_BasePlayer* localplayer = (C_BasePlayer*) entityList->GetClientEntity(engine->GetLocalPlayer());
-
-		if (localplayer && localplayer->GetAlive() && Settings::ThirdPerson::enabled && input->m_fCameraInThirdPerson)
-		{
-            switch (Settings::ThirdPerson::type)
-            {
-                case ShowedAngle::REAL:
-                    *localplayer->GetVAngles() = AntiAim::realAngle;
-                    break;
-                case ShowedAngle::FAKE:
-                    *localplayer->GetVAngles() = AntiAim::fakeAngle;
-                    break;
-            }
-		}
 	}
 }

@@ -127,28 +127,6 @@ enum class ShowedAngle : int
     FAKE,
 };
 
-enum class AntiAimType_Y : int
-{
-	NONE,
-    MAX_DELTA_LEFT,
-	MAX_DELTA_RIGHT,
-    MAX_DELTA_FLIPPER,
-    MAX_DELTA_LBY_AVOID,
-};
-
-enum class AntiAimType_X : int
-{
-    STATIC_UP,
-    STATIC_DOWN,
-    DANCE,
-    FRONT,
-    STATIC_UP_FAKE,
-    STATIC_DOWN_FAKE,
-    LISP_DOWN,
-    ANGEL_DOWN,
-    ANGEL_UP,
-};
-
 struct AimbotWeapon_t
 {
 	bool enabled,
@@ -522,39 +500,6 @@ namespace Settings
 			inline int lastRoll = 0;
 		}
 	}
-
-    namespace AntiAim
-    {
-        namespace AutoDisable
-        {
-            inline bool noEnemy = false;
-            inline bool knifeHeld = false;
-        }
-
-        namespace Yaw
-        {
-            inline bool enabled = false;
-            inline AntiAimType_Y type = AntiAimType_Y::NONE;
-            inline AntiAimType_Y typeFake = AntiAimType_Y::NONE;
-        }
-
-        namespace Pitch
-        {
-            inline bool enabled = false;
-            inline AntiAimType_X type = AntiAimType_X::STATIC_DOWN;
-        }
-
-        namespace HeadEdge
-        {
-            inline bool enabled = false;
-            inline float distance = 25.0f;
-        }
-        namespace LBYBreaker
-        {
-            inline bool enabled = false;
-            inline float offset = 180.0f;
-        }
-    }
 
 	namespace ESP
 	{
