@@ -18,7 +18,6 @@ extern IInputInternal* inputInternal;
 extern IMaterialSystem* material;
 extern ICvar* cvar;
 extern CGlobalVars* globalVars;
-extern CEffects* effects;
 extern IGameEventManager2* gameEvents;
 extern IPhysicsSurfaceProps* physics;
 extern CViewRender* viewRender;

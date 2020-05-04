@@ -360,9 +360,6 @@ void Settings::LoadDefaultsOrSave(std::string path)
 	LoadColor(settings[XORSTR("ESP")][XORSTR("DangerZone")][XORSTR("healthshot_color")], Settings::ESP::DangerZone::healthshotColor);
 	LoadColor(settings[XORSTR("ESP")][XORSTR("DangerZone")][XORSTR("melee_color")], Settings::ESP::DangerZone::meleeColor);
 
-	settings[XORSTR("Dlights")][XORSTR("enabled")] = Settings::Dlights::enabled;
-	settings[XORSTR("Dlights")][XORSTR("radius")] = Settings::Dlights::radius;
-
 	settings[XORSTR("FOVChanger")][XORSTR("enabled")] = Settings::FOVChanger::enabled;
 	settings[XORSTR("FOVChanger")][XORSTR("value")] = Settings::FOVChanger::value;
 	settings[XORSTR("FOVChanger")][XORSTR("viewmodel_enabled")] = Settings::FOVChanger::viewmodelEnabled;
@@ -701,9 +698,6 @@ void Settings::LoadConfig(std::string path)
 	GetVal(settings[XORSTR("ESP")][XORSTR("DangerZone")][XORSTR("tablet_color")], &Settings::ESP::DangerZone::tabletColor);
 	GetVal(settings[XORSTR("ESP")][XORSTR("DangerZone")][XORSTR("healthshot_color")], &Settings::ESP::DangerZone::healthshotColor);
 	GetVal(settings[XORSTR("ESP")][XORSTR("DangerZone")][XORSTR("melee_color")], &Settings::ESP::DangerZone::meleeColor);
-
-	GetVal(settings[XORSTR("Dlights")][XORSTR("enabled")], &Settings::Dlights::enabled);
-	GetVal(settings[XORSTR("Dlights")][XORSTR("radius")], &Settings::Dlights::radius);
 
 	GetVal(settings[XORSTR("FOVChanger")][XORSTR("enabled")], &Settings::FOVChanger::enabled);
 	GetVal(settings[XORSTR("FOVChanger")][XORSTR("value")], &Settings::FOVChanger::value);

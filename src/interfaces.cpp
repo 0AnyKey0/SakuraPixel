@@ -15,7 +15,6 @@ C_CSGameRules** csGameRules = nullptr;
 C_CSPlayerResource** csPlayerResource = nullptr;
 ICvar* cvar = nullptr;
 IVDebugOverlay* debugOverlay = nullptr;
-CEffects* effects = nullptr;
 IEngineClient* engine = nullptr;
 IEngineVGui* engineVGui = nullptr;
 IClientEntityList* entityList = nullptr;
@@ -60,7 +59,6 @@ void Interfaces::FindInterfaces()
 	inputInternal = GetInterface<IInputInternal>(XORSTR("./bin/linux64/vgui2_client.so"), XORSTR("VGUI_InputInternal"));
 	material = GetInterface<IMaterialSystem>(XORSTR("./bin/linux64/materialsystem_client.so"), XORSTR("VMaterialSystem"));
 	cvar = GetInterface<ICvar>(XORSTR("./bin/linux64/materialsystem_client.so"), XORSTR("VEngineCvar"));
-	effects = GetInterface<CEffects>(XORSTR("./bin/linux64/engine_client.so"), XORSTR("VEngineEffects"));
 	gameEvents = GetInterface<IGameEventManager2>(XORSTR("./bin/linux64/engine_client.so"), XORSTR("GAMEEVENTSMANAGER002"), true);
 	physics = GetInterface<IPhysicsSurfaceProps>(XORSTR("./bin/linux64/vphysics_client.so"), XORSTR("VPhysicsSurfaceProps"));
 	prediction = GetInterface<IPrediction>(XORSTR("./csgo/bin/linux64/client_panorama_client.so"), XORSTR("VClientPrediction001"), true);

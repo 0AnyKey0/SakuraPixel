@@ -704,12 +704,6 @@ namespace Settings
 		}
 	}
 
-	namespace Dlights
-	{
-		inline bool enabled = false;
-		inline float radius = 500.0f;
-	}
-	
 	namespace Eventlog
 	{
 		inline bool showEnemies = false;

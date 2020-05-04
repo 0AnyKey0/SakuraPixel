@@ -6,7 +6,6 @@
 #include "../fonts.h"
 
 #include "../Hacks/esp.h"
-#include "../Hacks/dlights.h"
 #include "../Hacks/hitmarkers.h"
 #include "../Hacks/eventlog.h"
 
@@ -38,7 +37,6 @@ void Hooks::Paint(void* thisptr, PaintMode_t mode)
 
         ESP::PaintToUpdateMatrix(); // Just for updating the viewMatrix
         /* These functions make drawRequests */
-        Dlights::Paint();
         ESP::Paint();
         Hitmarkers::Paint();
         Eventlog::Paint();

@@ -9,7 +9,6 @@
 #include "checksum_md5.h"
 #include "CUtlMemory.h"
 #include "CUtlVector.h"
-#include "CEffects.h"
 #include "CGlobalVars.h"
 #include "CInput.h"
 #include "IAppSystem.h"
