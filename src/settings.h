@@ -685,23 +685,17 @@ namespace Settings
 		inline bool ignoreScope = true;
 	}
 
-	namespace Autoblock
-	{
-		inline bool enabled = false;
-		inline ButtonCode_t key = ButtonCode_t::KEY_6;
-	}
-
 	namespace Skinchanger
 	{
 		namespace Skins
 		{
-			inline bool enabled = false;
-			inline bool perTeam = true;
+			inline bool enabled = true;
+			inline bool perTeam = false;
 		}
 
 		namespace Models
 		{
-			inline bool enabled = false;
+			inline bool enabled = true;
 		}
 
 		inline std::unordered_map<ItemDefinitionIndex, AttribItem_t, Util::IntHash<ItemDefinitionIndex>> skinsCT = {

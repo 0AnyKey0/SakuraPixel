@@ -3,7 +3,6 @@
 #include "../interfaces.h"
 #include "../settings.h"
 
-#include "../Hacks/autoblock.h"
 #include "../Hacks/aimbot.h"
 #include "../Hacks/esp.h"
 
@@ -22,8 +21,6 @@ bool Hooks::CreateMove(void* thisptr, float flInputSampleTime, CUserCmd* cmd)
         asm volatile("mov %%rbp, %0" : "=r" (rbp));
         bool *sendPacket = ((*(bool **)rbp) - 0x18);
         CreateMove::sendPacket = true;
-
-		Autoblock::CreateMove(cmd);
 
 		Aimbot::CreateMove(cmd);
 		ESP::CreateMove(cmd);

@@ -419,9 +419,6 @@ void Settings::LoadDefaultsOrSave(std::string path)
 
 	settings[XORSTR("NoScopeBorder")][XORSTR("enabled")] = Settings::NoScopeBorder::enabled;
 
-	settings[XORSTR("Autoblock")][XORSTR("enabled")] = Settings::Autoblock::enabled;
-	settings[XORSTR("Autoblock")][XORSTR("key")] = Settings::Autoblock::key;
-
 	settings[XORSTR("ScreenshotCleaner")][XORSTR("enabled")] = Settings::ScreenshotCleaner::enabled;
 
 	settings[XORSTR("ThirdPerson")][XORSTR("enabled")] = Settings::ThirdPerson::enabled;
@@ -790,9 +787,6 @@ void Settings::LoadConfig(std::string path)
 	GetVal(settings[XORSTR("NoSky")][XORSTR("color")], &Settings::NoSky::color);
 
 	GetVal(settings[XORSTR("NoScopeBorder")][XORSTR("enabled")], &Settings::NoScopeBorder::enabled);
-
-	GetVal(settings[XORSTR("Autoblock")][XORSTR("enabled")], &Settings::Autoblock::enabled);
-	GetButtonCode(settings[XORSTR("Autoblock")][XORSTR("key")], &Settings::Autoblock::key);
 
 	GetVal(settings[XORSTR("ScreenshotCleaner")][XORSTR("enabled")], &Settings::ScreenshotCleaner::enabled);
 
