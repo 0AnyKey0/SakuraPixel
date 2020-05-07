@@ -3,7 +3,7 @@
 </p>
 ===================
 
-# It looks like we are starting to get detected. Use public forks at your own Risk! 
+# This Skinchanger was a cheat based, VAC risk possible!
 
 ## What is SakuraPixel?
 
