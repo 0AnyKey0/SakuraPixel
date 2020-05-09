@@ -676,15 +676,6 @@ namespace Settings
 		}
 	}
 
-	namespace FOVChanger
-	{
-		inline bool enabled = false;
-		inline bool viewmodelEnabled = false;
-		inline float value = 100.0f;
-		inline float viewmodelValue = 90.0f;
-		inline bool ignoreScope = true;
-	}
-
 	namespace Skinchanger
 	{
 		namespace Skins

@@ -70,7 +70,6 @@ void MainThread()
     clientModeVMT = new VMT(clientMode);
     clientModeVMT->HookVM(Hooks::OverrideView, 19);
     clientModeVMT->HookVM(Hooks::CreateMove, 25);
-    clientModeVMT->HookVM(Hooks::GetViewModelFOV, 36);
     clientModeVMT->ApplyVMT();
 
     engineVGuiVMT = new VMT(engineVGui);

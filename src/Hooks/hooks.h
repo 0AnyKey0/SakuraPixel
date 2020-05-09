@@ -13,8 +13,7 @@ namespace Hooks
 	/* ClientMode */
 	void OverrideView(void* thisptr, CViewSetup* pSetup);
 	bool CreateMove(void* thisptr, float flInputSampleTime, CUserCmd* cmd);
-	float GetViewModelFOV(void* thisptr);
-
+	
 	/* GameEvents */
 	bool FireEventClientSide(void* thisptr, IGameEvent* event);
 
