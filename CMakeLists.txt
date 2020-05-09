@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(Fuzion)
+project(SakuraPixel)
 set(CMAKE_CXX_STANDARD 17)
 
 if(CMAKE_COMPILER_IS_GNUCXX)

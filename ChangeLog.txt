@@ -1,2 +1,3 @@
 09.05.2020
    - Deleted view
+   - Add ChangeLog.txt
