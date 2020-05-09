@@ -747,19 +747,6 @@ namespace Settings
         };
 	}
 
-	namespace View
-	{
-		namespace NoAimPunch
-		{
-			inline bool enabled = false;
-		}
-
-		namespace NoViewPunch
-		{
-			inline bool enabled = false;
-		}
-	}
-
 	namespace NoSky
 	{
 		inline bool enabled = false;

@@ -405,9 +405,6 @@ void Settings::LoadDefaultsOrSave(std::string path)
 	settings[XORSTR("UI")][XORSTR("Windows")][XORSTR("Spectators")][XORSTR("sizeX")] = Settings::UI::Windows::Spectators::sizeX;
 	settings[XORSTR("UI")][XORSTR("Windows")][XORSTR("Spectators")][XORSTR("sizeY")] = Settings::UI::Windows::Spectators::sizeY;
 
-	settings[XORSTR("View")][XORSTR("NoViewPunch")][XORSTR("enabled")] = Settings::View::NoViewPunch::enabled;
-	settings[XORSTR("View")][XORSTR("NoAimPunch")][XORSTR("enabled")] = Settings::View::NoAimPunch::enabled;
-
 	settings[XORSTR("NoSky")][XORSTR("enabled")] = Settings::NoSky::enabled;
 	LoadColor(settings[XORSTR("NoSky")][XORSTR("color")], Settings::NoSky::color);
 
@@ -767,9 +764,6 @@ void Settings::LoadConfig(std::string path)
 	Settings::UI::Windows::Config::reload = true;
 	Settings::UI::Windows::Skinmodel::reload = true;
 	Settings::UI::Windows::Spectators::reload = true;
-
-	GetVal(settings[XORSTR("View")][XORSTR("NoViewPunch")][XORSTR("enabled")], &Settings::View::NoViewPunch::enabled);
-	GetVal(settings[XORSTR("View")][XORSTR("NoAimPunch")][XORSTR("enabled")], &Settings::View::NoAimPunch::enabled);
 
 	GetVal(settings[XORSTR("NoSky")][XORSTR("enabled")], &Settings::NoSky::enabled);
 	GetVal(settings[XORSTR("NoSky")][XORSTR("color")], &Settings::NoSky::color);
