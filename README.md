@@ -7,7 +7,7 @@
 
 SkinChanger for *CounterStrike : Global Offensive* on Linux written in C++.
 
-##Stable release
+## Stable release:
 [Download](https://github.com/0AnyKey0/SakuraPixel/releases/latest)
 
 ## Compiling
