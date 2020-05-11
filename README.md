@@ -3,11 +3,12 @@
 </p>
 ===================
 
-# This Skinchanger was a cheat based, VAC risk possible!
-
 ## What is SakuraPixel?
 
 SkinChanger for *CounterStrike : Global Offensive* on Linux written in C++.
+
+##Stable release
+[Download](https://github.com/0AnyKey0/SakuraPixel/releases/latest)
 
 ## Compiling
 
