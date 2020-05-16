@@ -416,35 +416,7 @@ static void DrawEntity( C_BaseEntity* entity, const char* string, ImColor color 
 	Vector2D nameSize = Draw::GetTextSize( string, esp_font );
 	Draw::AddText(( int ) ( x + ( w / 2 ) - ( nameSize.x / 2 ) ), y + h + 2, string, color );
 }
-/*
 
-static void DrawSkeleton( C_BasePlayer* player, C_BasePlayer* localplayer ) {
-	studiohdr_t* pStudioModel = modelInfo->GetStudioModel( player->GetModel() );
-	if ( !pStudioModel )
-		return;
-
-	static matrix3x4_t pBoneToWorldOut[128];
-	if ( !player->SetupBones( pBoneToWorldOut, 128, 256, 0 ) )
-		return;
-
-	for ( int i = 0; i < pStudioModel->numbones; i++ ) {
-		mstudiobone_t* pBone = pStudioModel->pBone( i );
-		if ( !pBone || !( pBone->flags & 256 ) || pBone->parent == -1 )
-			continue;
-
-		Vector vBonePos1;
-		if ( debugOverlay->ScreenPosition( Vector( pBoneToWorldOut[i][0][3], pBoneToWorldOut[i][1][3], pBoneToWorldOut[i][2][3] ), vBonePos1 ) )
-			continue;
-
-		Vector vBonePos2;
-		if ( debugOverlay->ScreenPosition( Vector( pBoneToWorldOut[pBone->parent][0][3], pBoneToWorldOut[pBone->parent][1][3], pBoneToWorldOut[pBone->parent][2][3] ), vBonePos2 ) )
-			continue;
-
-		Draw::AddLine( vBonePos1.x, vBonePos1.y, vBonePos2.x, vBonePos2.y, Entity::IsTeamMate(player, localplayer) ? Settings::ESP::Skeleton::allyColor.Color() : Settings::ESP::Skeleton::enemyColor.Color());
-	}
-}
-
-*/
 static void DrawBulletTrace( C_BasePlayer* player ) {
 	Vector src3D, dst3D, forward;
 	Vector src, dst;
@@ -875,10 +847,7 @@ static void DrawPlayer(C_BasePlayer* player)
 
 	if (Settings::ESP::Bars::enabled)
 		DrawPlayerHealthBars( player, x, y, w, h, playerColor );
-/*
-	if (Settings::ESP::Skeleton::enabled)
-		DrawSkeleton(player, localplayer);
-*/
+
 	if (Settings::ESP::BulletTracers::enabled)
 		DrawBulletTrace(player);
 
