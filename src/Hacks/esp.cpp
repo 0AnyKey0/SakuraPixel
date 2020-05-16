@@ -404,45 +404,7 @@ static void DrawBox( ImColor color, int x, int y, int w, int h, C_BaseEntity* en
 				return;
 			Draw::AddLine( p1.x, p1.y, p2.x, p2.y, color );
 		}
-	} /*else if ( Settings::ESP::Boxes::type == BoxType::HITBOXES )  credits to 1337floesen - https://www.unknowncheats.me/forum/counterstrike-global-offensive/157557-drawing-hitboxes.html */ //{
-	/*static std::map<int, long> playerDrawTimes;
-    if ( playerDrawTimes.find( entity->GetIndex() ) == playerDrawTimes.end() ) { // haven't drawn this player yet
-        playerDrawTimes[entity->GetIndex()] = Util::GetEpochTime();
-    }
-
-    matrix3x4_t matrix[128];
-
-    if ( !entity->SetupBones( matrix, 128, 0x00000100, globalVars->curtime ) )
-        return;
-
-    studiohdr_t* hdr = modelInfo->GetStudioModel( entity->GetModel() );
-    mstudiohitboxset_t* set = hdr->pHitboxSet( 0 ); // :^)
-
-    long diffTime = Util::GetEpochTime() - playerDrawTimes.at( entity->GetIndex() );
-    if ( diffTime >= 12 ) {
-        for ( int i = 0; i < set->numhitboxes; i++ ) {
-            mstudiobbox_t* hitbox = set->pHitbox( i );
-            if ( !hitbox ) {
-                continue;
-            }
-            Vector vMin, vMax;
-            Math::VectorTransform( hitbox->bbmin, matrix[hitbox->bone], vMin );
-            Math::VectorTransform( hitbox->bbmax, matrix[hitbox->bone], vMax );
-
-            debugOverlay->DrawPill( vMin, vMax, hitbox->radius, color.r, color.g, color.b, 0.025f, color.a, false );
-        }
-        playerDrawTimes[entity->GetIndex()] = Util::GetEpochTime();
-    }
-}*/
-}
-
-static void DrawSprite( int x, int y, int w, int h, C_BaseEntity* entity ){
-	if ( Settings::ESP::Sprite::type == SpriteType::SPRITE_TUX ) {
-		static Texture sprite(tux_rgba, tux_width, tux_height);
-
-		sprite.Draw(x, y, ((float)h/tux_height)*tux_width, h);
 	}
-	// TODO: Handle other sprites
 }
 
 static void DrawEntity( C_BaseEntity* entity, const char* string, ImColor color ) {
@@ -906,9 +868,6 @@ static void DrawPlayer(C_BasePlayer* player)
 
 	if (Settings::ESP::Boxes::enabled)
 		DrawBox(playerColor, x, y, w, h, player);
-
-	if (Settings::ESP::Sprite::enabled)
-        DrawSprite(x, y, w, h, player);
 
 	if (Settings::ESP::Bars::enabled)
 		DrawPlayerHealthBars( player, x, y, w, h, playerColor );
